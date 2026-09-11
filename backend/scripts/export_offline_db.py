@@ -28,15 +28,14 @@ def create_and_export_db():
     with open(SEEDS_DIR / "recipes.json") as f:
         recipes = json.load(f)
 
-    # Remove existing db if present
-    if DB_PATH.exists():
-        DB_PATH.unlink()
+    TMP_PATH = DB_PATH.with_suffix(".export_tmp")
+    if TMP_PATH.exists():
+        TMP_PATH.unlink()
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(TMP_PATH)
     cursor = conn.cursor()
 
-    # Enable WAL mode and foreign keys
-    cursor.execute("PRAGMA journal_mode=WAL;")
+    # Enable foreign keys
     cursor.execute("PRAGMA foreign_keys=ON;")
 
     # Schema definition
@@ -300,7 +299,21 @@ def create_and_export_db():
     cursor.execute("SELECT count(*) FROM food_nutrients")
     nutrient_data_count = cursor.fetchone()[0]
 
+    conn.commit()
     conn.close()
+
+    # Atomically replace DB_PATH
+    import os
+    os.replace(TMP_PATH, DB_PATH)
+
+    # Clean up stale WAL/SHM files
+    for sfx in ["-wal", "-shm"]:
+        stale_file = DB_PATH.with_name(DB_PATH.name + sfx)
+        if stale_file.exists():
+            try:
+                stale_file.unlink()
+            except Exception:
+                pass
 
     print(f"  ✓ Successfully created {DB_PATH}")
     print(f"  ✓ Database verified with {food_count} foods, {recipe_count} recipes, {nutrient_data_count} food nutrients, FTS5 indexed")
