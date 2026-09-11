@@ -40,21 +40,27 @@ def seed_database(force_reseed=False):
 
         print(f"  🌱 Seeding canonical knowledge base ({food_count} existing -> updating to full 548+ dataset)...")
 
-        # Clear existing data if partial
+        # Clear existing data if partial or forced
         if food_count > 0:
+            if "sqlite" in settings.DATABASE_URL:
+                db.execute(text("PRAGMA foreign_keys = OFF;"))
+            
             db.execute(text("DELETE FROM recipe_ingredients;"))
             db.execute(text("DELETE FROM recipes;"))
             db.execute(text("DELETE FROM food_nutrients;"))
             db.execute(text("DELETE FROM food_aliases;"))
             db.execute(text("DELETE FROM foods;"))
-            db.execute(text("DELETE FROM nutrients;"))
+            db.execute(text("DELETE FROM cuisines;"))
             db.execute(text("DELETE FROM categories;"))
             db.execute(text("DELETE FROM regions;"))
             db.execute(text("DELETE FROM countries;"))
-            db.execute(text("DELETE FROM cuisines;"))
             db.execute(text("DELETE FROM diet_types;"))
+            db.execute(text("DELETE FROM nutrients;"))
             db.execute(text("DELETE FROM sources;"))
             db.commit()
+
+            if "sqlite" in settings.DATABASE_URL:
+                db.execute(text("PRAGMA foreign_keys = ON;"))
 
         # Load JSON files
         with open(SEEDS_DIR / "sources.json") as f:
@@ -79,27 +85,40 @@ def seed_database(force_reseed=False):
                 license_status=s.get("license_status"),
                 notes=s.get("notes")
             ))
+        db.flush()
 
-        # Insert Taxonomies
+        # Insert Categories (referenced by foods.category)
         for c in taxonomies_data.get("categories", []):
             db.add(Category(id=c["id"], name=c["name"], description=c.get("description")))
+        db.flush()
+
+        # Insert Regions (referenced by cuisines.region_id)
         for r in taxonomies_data.get("regions", []):
             db.add(Region(id=r["id"], name=r["name"], description=r.get("description")))
+        db.flush()
+
+        # Insert Countries
         for cnt in taxonomies_data.get("countries", []):
             db.add(Country(id=cnt["id"], name=cnt["name"]))
+        db.flush()
+
+        # Insert Cuisines (references regions.id)
         for cui in taxonomies_data.get("cuisines", []):
             db.add(Cuisine(id=cui["id"], name=cui["name"], region_id=cui.get("region_id")))
+        db.flush()
+
+        # Insert Diet Types
         for d in taxonomies_data.get("diet_types", []):
             db.add(DietType(id=d["id"], name=d["name"], description=d.get("description")))
+        db.flush()
         
         nutrient_unit_map = {}
         for n in taxonomies_data.get("nutrients", []):
             db.add(Nutrient(id=n["id"], name=n["name"], unit=n["unit"], category=n["category"]))
             nutrient_unit_map[n["id"]] = n["unit"]
-
         db.flush()
 
-        # Insert Foods and Normalized FoodNutrients
+        # Insert Foods (references categories.id)
         for f in foods_data:
             nutr = f.get("nutrition", {})
             food_obj = Food(
@@ -138,11 +157,14 @@ def seed_database(force_reseed=False):
                 vitamin_b12_ug=nutr.get("vitamin_b12_ug")
             )
             db.add(food_obj)
+        db.flush()
 
+        # Insert FoodAliases & FoodNutrients (references foods.id and nutrients.id)
+        for f in foods_data:
+            nutr = f.get("nutrition", {})
             for alias in f.get("aliases", []):
                 db.add(FoodAlias(food_id=f["id"], alias=alias))
 
-            # Insert normalized FoodNutrient rows
             for n_id, unit in nutrient_unit_map.items():
                 val = nutr.get(n_id)
                 if val is not None:
@@ -153,6 +175,7 @@ def seed_database(force_reseed=False):
                         unit=unit,
                         basis_g=100.0
                     ))
+        db.flush()
 
         # Insert Recipes
         for r in recipes_data:
@@ -171,7 +194,10 @@ def seed_database(force_reseed=False):
                 source_ids_json=json.dumps(r.get("source_ids", []))
             )
             db.add(recipe_obj)
+        db.flush()
 
+        # Insert RecipeIngredients (references recipes.id and foods.id)
+        for r in recipes_data:
             for ing in r.get("ingredients", []):
                 db.add(RecipeIngredient(
                     recipe_id=r["id"],
@@ -179,6 +205,7 @@ def seed_database(force_reseed=False):
                     quantity=ing["quantity"],
                     unit=ing["unit"]
                 ))
+        db.flush()
 
         db.commit()
 
@@ -222,4 +249,4 @@ def seed_database(force_reseed=False):
         print(f"  ✓ Successfully seeded {final_food_count} foods, {final_recipe_count} recipes, and {final_nutrient_count} normalized nutrient data points!")
 
 if __name__ == "__main__":
-    seed_database(force_reseed=True)
+    seed_database(force_reseed=False)
