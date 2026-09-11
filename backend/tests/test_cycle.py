@@ -27,6 +27,13 @@ def test_estimate_cycle_phase():
     assert data["phase_id"] == "menstrual"
     assert data["estimated_cycle_day"] == 2
     assert any(n["nutrient_id"] == "iron_mg" for n in data["priority_nutrients"])
+    assert "nutrition_focus" in data
+    assert "iron" in data["nutrition_focus"]
+    assert "nutrition_context" in data
+    assert len(data["nutrition_context"]) > 0
+    # Backward compatibility
+    assert "recommended_tags" in data
+    assert "iron" in data["recommended_tags"]
 
 def test_estimate_cycle_invalid_date():
     payload = {

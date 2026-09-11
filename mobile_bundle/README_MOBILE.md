@@ -65,12 +65,32 @@ for (var f in foods) {
   print("${f.name}: Calcium=${f.calciumMg}mg, Iron=${f.ironMg}mg");
 }
 
-// 3. Match Kitchen Inventory & Rank Recipes
+// 3. Match Kitchen Inventory & Rank Recipes (with Nutrition Per Serving)
 final recipes = await NutritionOfflineService.rankRecipes(
   availableFoodIds: ["ragi", "rice", "urad_dal", "coconut_oil"],
-  targetTags: phase.targetTags,
+  targetTags: phase.nutritionFocus,
 );
-print("Top Recipe: ${recipes.first['recipe_name']} (Match: ${recipes.first['match_percentage']}%)");
+final topRecipe = recipes.first;
+print("Top Recipe: ${topRecipe['recipe_name']} (Match: ${topRecipe['match_percentage']}%)");
+final servingNutrition = topRecipe['nutrition_per_serving'] as Map<String, double>;
+print("Calories: ${servingNutrition['energy_kcal']} kcal, Iron: ${servingNutrition['iron_mg']} mg");
+
+// 4. Home Screen Daily Intake & Nutrient Progress (100% Local in Flutter)
+// When user taps "I ate this":
+final log = DailyIntakeLogItem(
+  id: "log_${DateTime.now().millisecondsSinceEpoch}",
+  timestamp: DateTime.now(),
+  recipeId: topRecipe['recipe_id'],
+  name: topRecipe['recipe_name'],
+  portionOrServings: 1.0,
+  meal: "breakfast",
+  nutrients: servingNutrition,
+);
+
+// Calculate progress against ICMR-NIN RDA 2024 for progress bars
+final totals = NutritionOfflineService.calculateDailyNutrientProgress([log]);
+print("Iron Progress: ${totals.progressPercentages['iron_mg']?.toStringAsFixed(1)}%");
+print("Protein Progress: ${totals.progressPercentages['protein_g']?.toStringAsFixed(1)}%");
 ```
 
 ---

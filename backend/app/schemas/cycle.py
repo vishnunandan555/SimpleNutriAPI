@@ -9,6 +9,7 @@ class PhaseNutrientInfo(BaseModel):
     nutrient_id: str
     nutrient_name: str
     biological_role: str
+    nutrition_context: str = ""
     top_food_sources: List[str]
 
 class CyclePhaseResponse(BaseModel):
@@ -18,10 +19,12 @@ class CyclePhaseResponse(BaseModel):
     phase_name: str
     phase_day_range: str
     description: str
+    nutrition_focus: List[str] = []
+    nutrition_context: List[str] = []
     priority_nutrients: List[PhaseNutrientInfo]
-    recommended_tags: List[str]
-    dietary_tips: List[str]
+    recommended_tags: List[str] = []
+    dietary_tips: List[str] = []
     disclaimer: str = (
-        "Personalization is an estimate based on cycle day and general evidence-based nutritional guidelines. "
+        "Personalization provides general supportive nutritional guidelines based on cycle day. "
         "It is not a diagnostic tool or medical prescription."
     )

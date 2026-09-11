@@ -254,10 +254,12 @@ class FoodService:
         region: Optional[str] = None,
         cuisine: Optional[str] = None,
         available_food_ids: List[str] = [],
+        excluded_food_ids: List[str] = [],
+        preferred_food_ids: List[str] = [],
         limit: int = 25
     ) -> List[Dict]:
         """
-        Food ranking engine implementing SRS Section 9.4:
+        Food ranking engine implementing SRS Section 9.4 with exclusions and preferences:
         score = nutrient_match * 0.40 + diet_match * 0.20 + region_match * 0.15 + cuisine_match * 0.10 + availability * 0.10 + preference * 0.05
         """
         stmt = select(Food).options(selectinload(Food.aliases))
@@ -268,12 +270,32 @@ class FoodService:
         for af in available_food_ids:
             r = cls.resolve_food_id(db, af)
             if r:
-                resolved_avail.add(r)
+                resolved_avail.add(r.lower())
             else:
                 resolved_avail.add(af.lower())
 
+        resolved_excluded = set()
+        for ef in excluded_food_ids:
+            r = cls.resolve_food_id(db, ef)
+            if r:
+                resolved_excluded.add(r.lower())
+            else:
+                resolved_excluded.add(ef.lower().strip())
+
+        resolved_preferred = set()
+        for pf in preferred_food_ids:
+            r = cls.resolve_food_id(db, pf)
+            if r:
+                resolved_preferred.add(r.lower())
+            else:
+                resolved_preferred.add(pf.lower().strip())
+
         scored = []
         for f in foods:
+            fid_lower = f.id.lower()
+            if fid_lower in resolved_excluded or any(ex in fid_lower for ex in resolved_excluded if len(ex) > 2):
+                continue
+
             summary = cls._to_summary(f)
             food_tags = set(t.lower() for t in summary.tags)
             
@@ -291,7 +313,10 @@ class FoodService:
             cuisine_score = 100.0 if not cuisine or (cuisine.lower() in [c.lower() for c in summary.cuisines]) else 30.0
 
             # 5. Availability (0.10)
-            avail_score = 100.0 if f.id in resolved_avail else 0.0
+            avail_score = 100.0 if fid_lower in resolved_avail else 0.0
+
+            # 6. Preference (0.05)
+            pref_score = 100.0 if (fid_lower in resolved_preferred or any(p in fid_lower for p in resolved_preferred if len(p) > 2)) else 50.0
 
             # Combined SRS formula
             final_score = (
@@ -300,14 +325,14 @@ class FoodService:
                 (region_score * 0.15) +
                 (cuisine_score * 0.10) +
                 (avail_score * 0.10) +
-                (50.0 * 0.05)
+                (pref_score * 0.05)
             )
 
             scored.append({
                 "food": summary,
                 "score": round(final_score, 2),
                 "nutrient_match_score": round(nutrient_score, 1),
-                "is_in_kitchen": f.id in resolved_avail
+                "is_in_kitchen": fid_lower in resolved_avail
             })
 
         scored.sort(key=lambda x: x["score"], reverse=True)

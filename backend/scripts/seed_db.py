@@ -178,8 +178,33 @@ def seed_database(force_reseed=False):
                     ))
         db.flush()
 
+        # Food nutrition lookup for pre-calculating recipe nutrition per serving
+        food_nutr_lookup = {f["id"]: f.get("nutrition", {}) for f in foods_data}
+
         # Insert Recipes
         for r in recipes_data:
+            servings = r.get("servings", 2) or 1
+            if servings <= 0:
+                servings = 1
+
+            totals = {
+                "energy_kcal": 0.0, "protein_g": 0.0, "carbohydrate_g": 0.0, "fat_g": 0.0,
+                "fiber_g": 0.0, "iron_mg": 0.0, "calcium_mg": 0.0, "magnesium_mg": 0.0,
+                "zinc_mg": 0.0, "potassium_mg": 0.0, "sodium_mg": 0.0, "vitamin_c_mg": 0.0,
+                "folate_ug": 0.0, "vitamin_b6_mg": 0.0
+            }
+            for ing in r.get("ingredients", []):
+                fid = ing.get("food_id")
+                qty = float(ing.get("quantity", 0))
+                f_nutr = food_nutr_lookup.get(fid, {})
+                ratio = qty / 100.0
+                for k in totals:
+                    val = f_nutr.get(k)
+                    if val is not None:
+                        totals[k] += float(val) * ratio
+
+            per_serving = {k: round(v / servings, 2) for k, v in totals.items()}
+
             recipe_obj = Recipe(
                 id=r["id"],
                 name=r["name"],
@@ -194,6 +219,7 @@ def seed_database(force_reseed=False):
                 tags_json=json.dumps(r.get("tags", [])),
                 meal_type_json=json.dumps(r.get("meal_type", [])),
                 instructions_json=json.dumps(r.get("instructions", [])),
+                nutrition_per_serving_json=json.dumps(per_serving),
                 source_ids_json=json.dumps(r.get("source_ids", []))
             )
             db.add(recipe_obj)

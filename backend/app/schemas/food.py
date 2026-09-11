@@ -47,6 +47,8 @@ class FoodRecommendationRequest(BaseModel):
     region: Optional[str] = None
     cuisine: Optional[str] = None
     available_food_ids: List[str] = []
+    excluded_food_ids: List[str] = []
+    preferred_food_ids: List[str] = []
     limit: int = 25
 
 class FoodRecommendationItem(BaseModel):

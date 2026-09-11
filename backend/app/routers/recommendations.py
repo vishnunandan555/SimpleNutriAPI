@@ -72,6 +72,8 @@ def rank_foods(
         region=payload.region,
         cuisine=payload.cuisine,
         available_food_ids=payload.available_food_ids,
+        excluded_food_ids=payload.excluded_food_ids,
+        preferred_food_ids=payload.preferred_food_ids,
         limit=payload.limit
     )
 

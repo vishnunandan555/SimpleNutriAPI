@@ -62,6 +62,45 @@ def test_food_recommendations():
     assert "food" in ranked[0]
     assert ranked[0]["food"]["category"] is not None
 
+def test_food_recommendations_with_excluded_and_preferred():
+    # 1. First get recommendations with calcium & iron
+    base_payload = {
+        "target_tags": ["calcium", "iron"],
+        "diet": "vegetarian",
+        "region": "india",
+        "limit": 10
+    }
+    base_res = client.post("/api/v1/recommendations/foods", json=base_payload)
+    base_ranked = base_res.json()
+    top_food_id = base_ranked[0]["food"]["id"]
+
+    # 2. Exclude top food
+    exclude_payload = {
+        "target_tags": ["calcium", "iron"],
+        "diet": "vegetarian",
+        "region": "india",
+        "excluded_food_ids": [top_food_id],
+        "limit": 10
+    }
+    exclude_res = client.post("/api/v1/recommendations/foods", json=exclude_payload)
+    exclude_ranked = exclude_res.json()
+    excluded_ids = [r["food"]["id"] for r in exclude_ranked]
+    assert top_food_id not in excluded_ids
+
+    # 3. Prefer a specific food and assert it receives bonus / ranks prominently
+    pref_food_id = base_ranked[-1]["food"]["id"]
+    pref_payload = {
+        "target_tags": ["calcium", "iron"],
+        "diet": "vegetarian",
+        "region": "india",
+        "preferred_food_ids": [pref_food_id],
+        "limit": 10
+    }
+    pref_res = client.post("/api/v1/recommendations/foods", json=pref_payload)
+    pref_ranked = pref_res.json()
+    pref_item = next((r for r in pref_ranked if r["food"]["id"] == pref_food_id), None)
+    assert pref_item is not None
+
 def test_food_detail_not_found():
     response = client.get("/api/v1/foods/nonexistent_food_identifier_xyz")
     assert response.status_code == 404

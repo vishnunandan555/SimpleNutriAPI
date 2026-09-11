@@ -91,6 +91,7 @@ class RecipeItem {
   final int? cookTimeMin;
   final int? servings;
   final List<RecipeIngredientItem> ingredients;
+  final Map<String, double> nutritionPerServing;
 
   RecipeItem({
     required this.id,
@@ -104,7 +105,49 @@ class RecipeItem {
     this.cookTimeMin,
     this.servings,
     required this.ingredients,
+    this.nutritionPerServing = const {},
   });
+
+  factory RecipeItem.fromMap(Map<String, dynamic> map, List<RecipeIngredientItem> ingredientsList) {
+    List<String> parseList(dynamic raw) {
+      if (raw == null) return [];
+      try {
+        final decoded = jsonDecode(raw.toString());
+        if (decoded is List) return decoded.map((e) => e.toString()).toList();
+      } catch (_) {}
+      return [];
+    }
+
+    Map<String, double> parseNutrients(dynamic raw) {
+      if (raw == null) return {};
+      try {
+        final decoded = jsonDecode(raw.toString());
+        if (decoded is Map) {
+          final Map<String, double> result = {};
+          decoded.forEach((k, v) {
+            if (v is num) result[k.toString()] = v.toDouble();
+          });
+          return result;
+        }
+      } catch (_) {}
+      return {};
+    }
+
+    return RecipeItem(
+      id: map['id'] as String,
+      name: map['name'] as String,
+      description: map['description'] as String?,
+      cuisine: map['cuisine'] as String?,
+      tags: parseList(map['tags_json']),
+      mealType: parseList(map['meal_type_json']),
+      instructions: parseList(map['instructions_json']),
+      prepTimeMin: (map['prep_time_min'] as num?)?.toInt(),
+      cookTimeMin: (map['cook_time_min'] as num?)?.toInt(),
+      servings: (map['servings'] as num?)?.toInt(),
+      ingredients: ingredientsList,
+      nutritionPerServing: parseNutrients(map['nutrition_per_serving_json']),
+    );
+  }
 }
 
 class RecipeIngredientItem {
@@ -126,6 +169,8 @@ class CyclePhaseInfo {
   final String description;
   final List<String> priorityNutrientNames;
   final List<String> targetTags;
+  final List<String> nutritionFocus;
+  final List<String> nutritionContext;
 
   CyclePhaseInfo({
     required this.estimatedCycleDay,
@@ -134,12 +179,130 @@ class CyclePhaseInfo {
     required this.description,
     required this.priorityNutrientNames,
     required this.targetTags,
+    this.nutritionFocus = const [],
+    this.nutritionContext = const [],
+  });
+}
+
+/// Represents a food or recipe logged by the user for a meal (Home Screen Daily Ledger)
+class DailyIntakeLogItem {
+  final String id;
+  final DateTime timestamp;
+  final String? foodId;
+  final String? recipeId;
+  final String name;
+  final double portionOrServings;
+  final String meal; // 'breakfast', 'lunch', 'dinner', 'snack'
+  final Map<String, double> nutrients;
+
+  DailyIntakeLogItem({
+    required this.id,
+    required this.timestamp,
+    this.foodId,
+    this.recipeId,
+    required this.name,
+    this.portionOrServings = 1.0,
+    this.meal = 'snack',
+    required this.nutrients,
+  });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'timestamp': timestamp.toIso8601String(),
+      'food_id': foodId,
+      'recipe_id': recipeId,
+      'name': name,
+      'portion_or_servings': portionOrServings,
+      'meal': meal,
+      'nutrients': jsonEncode(nutrients),
+    };
+  }
+
+  factory DailyIntakeLogItem.fromMap(Map<String, dynamic> map) {
+    Map<String, double> parsedNutrients = {};
+    try {
+      final decoded = jsonDecode(map['nutrients'].toString());
+      if (decoded is Map) {
+        decoded.forEach((k, v) {
+          if (v is num) parsedNutrients[k.toString()] = v.toDouble();
+        });
+      }
+    } catch (_) {}
+
+    return DailyIntakeLogItem(
+      id: map['id'] as String,
+      timestamp: DateTime.parse(map['timestamp'] as String),
+      foodId: map['food_id'] as String?,
+      recipeId: map['recipe_id'] as String?,
+      name: map['name'] as String,
+      portionOrServings: (map['portion_or_servings'] as num?)?.toDouble() ?? 1.0,
+      meal: map['meal'] as String? ?? 'snack',
+      nutrients: parsedNutrients,
+    );
+  }
+}
+
+/// Aggregated nutrient totals and RDA progress percentages for Home Screen progress bars
+class DailyNutrientTotals {
+  final double energyKcal;
+  final double proteinG;
+  final double carbG;
+  final double fatG;
+  final double fiberG;
+  final double ironMg;
+  final double calciumMg;
+  final double magnesiumMg;
+  final double zincMg;
+  final double potassiumMg;
+  final double sodiumMg;
+  final double vitaminCMg;
+  final double folateUg;
+  final double vitaminB6Mg;
+
+  /// Map of nutrient key to percentage of daily RDA achieved (0.0 to 100.0+)
+  final Map<String, double> progressPercentages;
+
+  DailyNutrientTotals({
+    required this.energyKcal,
+    required this.proteinG,
+    required this.carbG,
+    required this.fatG,
+    required this.fiberG,
+    required this.ironMg,
+    required this.calciumMg,
+    required this.magnesiumMg,
+    required this.zincMg,
+    required this.potassiumMg,
+    required this.sodiumMg,
+    required this.vitaminCMg,
+    required this.folateUg,
+    required this.vitaminB6Mg,
+    required this.progressPercentages,
   });
 }
 
 /// Offline Nutrition Database & Logic Engine for Flutter
 class NutritionOfflineService {
   static Database? _db;
+
+  /// Default Daily Reference Values based on ICMR-NIN RDA (2024) for adult Indian women
+  static const Map<String, double> defaultRdaTargets = {
+    'energy_kcal': 2000.0,
+    'protein_g': 46.0,
+    'carbohydrate_g': 250.0,
+    'fat_g': 25.0,
+    'fiber_g': 30.0,
+    'iron_mg': 29.0,
+    'calcium_mg': 1000.0,
+    'magnesium_mg': 370.0,
+    'zinc_mg': 13.2,
+    'potassium_mg': 3500.0,
+    'sodium_mg': 2000.0,
+    'vitamin_c_mg': 65.0,
+    'folate_ug': 220.0,
+    'vitamin_b6_mg': 1.9,
+  };
 
   /// Initialize and open bundled nutrition.db from assets
   static Future<Database> get database async {
@@ -204,6 +367,13 @@ class NutritionOfflineService {
         description: "Support overall nutritional adequacy with dietary iron, vitamin C, and magnesium for muscle comfort.",
         priorityNutrientNames: ["Iron", "Vitamin C", "Magnesium"],
         targetTags: ["iron", "vitamin_c", "magnesium", "anti_inflammatory"],
+        nutritionFocus: ["iron", "vitamin_c", "protein", "folate"],
+        nutritionContext: [
+          "Menstrual blood loss increases iron requirements over time.",
+          "Vitamin C can improve absorption of non-heme iron from plant foods.",
+          "Adequate protein supports tissue repair and cellular recovery.",
+          "Hydration and light mineral balance support overall comfort.",
+        ],
       );
     } else if (cycleDay <= 13) {
       return CyclePhaseInfo(
@@ -213,6 +383,12 @@ class NutritionOfflineService {
         description: "Support general vitality and cellular energy with clean protein, B-vitamins, and zinc.",
         priorityNutrientNames: ["Protein", "Folate (B9)", "Zinc"],
         targetTags: ["protein", "folate", "zinc"],
+        nutritionFocus: ["protein", "folate", "zinc", "vitamin_b6"],
+        nutritionContext: [
+          "Rising follicular activity benefits from steady protein intake.",
+          "Folate and zinc support cellular energy and normal cell division.",
+          "Complex carbohydrates and whole grains maintain steady stamina.",
+        ],
       );
     } else if (cycleDay <= 16) {
       return CyclePhaseInfo(
@@ -222,6 +398,12 @@ class NutritionOfflineService {
         description: "Prioritize nutrient-dense whole foods, dietary fiber, and adequate hydration.",
         priorityNutrientNames: ["Dietary Fiber", "Zinc", "Potassium"],
         targetTags: ["fiber", "zinc", "antioxidant"],
+        nutritionFocus: ["fiber", "zinc", "antioxidant", "potassium"],
+        nutritionContext: [
+          "Higher estrogen peaks benefit from dietary fiber to assist normal hepatic hormone clearance.",
+          "Zinc and antioxidant-rich foods support cellular health during ovulation.",
+          "Adequate hydration and leafy greens support electrolyte balance.",
+        ],
       );
     } else {
       return CyclePhaseInfo(
@@ -231,11 +413,17 @@ class NutritionOfflineService {
         description: "Support steady energy and mood balance with magnesium, calcium, and complex carbs.",
         priorityNutrientNames: ["Magnesium", "Calcium", "Vitamin B6", "Complex Carbs"],
         targetTags: ["magnesium", "calcium", "vitamin_b6", "complex_carbs", "pms_support"],
+        nutritionFocus: ["magnesium", "calcium", "vitamin_b6", "complex_carbs"],
+        nutritionContext: [
+          "Progesterone elevation increases basal metabolic rate slightly, favoring complex carbohydrates.",
+          "Magnesium and calcium dietary intake support smooth muscle relaxation and comfort.",
+          "Vitamin B6 assists normal neurotransmitter synthesis, supporting mood stability.",
+        ],
       );
     }
   }
 
-  /// Offline Kitchen Matching & Recipe Ranking
+  /// Offline Kitchen Matching & Recipe Ranking with Nutrition Per Serving
   static Future<List<Map<String, dynamic>>> rankRecipes({
     required List<String> availableFoodIds,
     List<String> targetTags = const [],
@@ -265,6 +453,8 @@ class NutritionOfflineService {
       List<String> tags = [];
       List<String> mealType = [];
       List<String> instructions = [];
+      Map<String, double> nutritionPerServing = {};
+
       try {
         final decoded = jsonDecode(r['tags_json'].toString());
         if (decoded is List) tags = decoded.map((e) => e.toString().toLowerCase()).toList();
@@ -277,6 +467,14 @@ class NutritionOfflineService {
         final decoded = jsonDecode(r['instructions_json'].toString());
         if (decoded is List) instructions = decoded.map((e) => e.toString()).toList();
       } catch (_) {}
+      try {
+        final decoded = jsonDecode(r['nutrition_per_serving_json'].toString());
+        if (decoded is Map) {
+          decoded.forEach((k, v) {
+            if (v is num) nutritionPerServing[k.toString()] = v.toDouble();
+          });
+        }
+      } catch (_) {}
 
       final overlap = tags.where((t) => targetTagSet.contains(t)).length;
       final score = (matchPct * 0.6) + (overlap * 20.0 * 0.4) - (missing.length * 5.0);
@@ -285,8 +483,12 @@ class NutritionOfflineService {
         'recipe_id': rid,
         'recipe_name': r['name'],
         'cuisine': r['cuisine'],
+        'servings': r['servings'],
+        'prep_time_min': r['prep_time_min'],
+        'cook_time_min': r['cook_time_min'],
         'meal_type': mealType,
         'instructions': instructions,
+        'nutrition_per_serving': nutritionPerServing,
         'match_percentage': matchPct.roundToDouble(),
         'matched_count': matched.length,
         'missing_ingredients': missing.map((m) => {'food_id': m.foodId, 'quantity': m.quantity, 'unit': m.unit}).toList(),
@@ -296,5 +498,62 @@ class NutritionOfflineService {
 
     ranked.sort((a, b) => (b['score'] as double).compareTo(a['score'] as double));
     return ranked;
+  }
+
+  /// Calculate daily nutrient intake totals and progress against RDA targets for Home Screen progress bars
+  static DailyNutrientTotals calculateDailyNutrientProgress(
+    List<DailyIntakeLogItem> logs, {
+    Map<String, double>? customRda,
+  }) {
+    final targets = customRda ?? defaultRdaTargets;
+    final Map<String, double> totals = {
+      'energy_kcal': 0.0,
+      'protein_g': 0.0,
+      'carbohydrate_g': 0.0,
+      'fat_g': 0.0,
+      'fiber_g': 0.0,
+      'iron_mg': 0.0,
+      'calcium_mg': 0.0,
+      'magnesium_mg': 0.0,
+      'zinc_mg': 0.0,
+      'potassium_mg': 0.0,
+      'sodium_mg': 0.0,
+      'vitamin_c_mg': 0.0,
+      'folate_ug': 0.0,
+      'vitamin_b6_mg': 0.0,
+    };
+
+    for (final log in logs) {
+      final portion = log.portionOrServings;
+      log.nutrients.forEach((k, v) {
+        if (totals.containsKey(k)) {
+          totals[k] = (totals[k] ?? 0.0) + (v * portion);
+        }
+      });
+    }
+
+    final Map<String, double> progress = {};
+    totals.forEach((k, v) {
+      final target = targets[k] ?? 1.0;
+      progress[k] = target > 0 ? ((v / target) * 100.0) : 0.0;
+    });
+
+    return DailyNutrientTotals(
+      energyKcal: totals['energy_kcal'] ?? 0.0,
+      proteinG: totals['protein_g'] ?? 0.0,
+      carbG: totals['carbohydrate_g'] ?? 0.0,
+      fatG: totals['fat_g'] ?? 0.0,
+      fiberG: totals['fiber_g'] ?? 0.0,
+      ironMg: totals['iron_mg'] ?? 0.0,
+      calciumMg: totals['calcium_mg'] ?? 0.0,
+      magnesiumMg: totals['magnesium_mg'] ?? 0.0,
+      zincMg: totals['zinc_mg'] ?? 0.0,
+      potassiumMg: totals['potassium_mg'] ?? 0.0,
+      sodiumMg: totals['sodium_mg'] ?? 0.0,
+      vitaminCMg: totals['vitamin_c_mg'] ?? 0.0,
+      folateUg: totals['folate_ug'] ?? 0.0,
+      vitaminB6Mg: totals['vitamin_b6_mg'] ?? 0.0,
+      progressPercentages: progress,
+    );
   }
 }

@@ -22,6 +22,25 @@ def test_get_recipe_detail():
     assert len(recipe["instructions"]) >= 3
     assert "meal_type" in recipe
     assert "breakfast" in recipe["meal_type"]
+    assert "nutrition_per_serving" in recipe
+    nps = recipe["nutrition_per_serving"]
+    assert nps is not None
+    assert nps.get("energy_kcal", 0) > 0
+    assert nps.get("calcium_mg", 0) > 0
+    assert nps.get("iron_mg", 0) > 0
+
+def test_recipe_nutrition_per_serving_in_list():
+    response = client.get("/api/v1/recipes")
+    assert response.status_code == 200
+    data = response.json()
+    items = data["items"]
+    assert len(items) > 0
+    # Every recipe should have precomputed nutrition_per_serving
+    for item in items:
+        assert "nutrition_per_serving" in item
+        nps = item["nutrition_per_serving"]
+        assert nps is not None
+        assert nps["energy_kcal"] > 0
 
 def test_filter_recipes_by_meal_type():
     response = client.get("/api/v1/recipes?meal_type=breakfast")

@@ -10,6 +10,24 @@ class RecipeIngredientItem(BaseModel):
 
     model_config = ConfigDict(from_attributes=True)
 
+class RecipeNutritionPerServing(BaseModel):
+    energy_kcal: Optional[float] = None
+    protein_g: Optional[float] = None
+    carbohydrate_g: Optional[float] = None
+    fat_g: Optional[float] = None
+    fiber_g: Optional[float] = None
+    iron_mg: Optional[float] = None
+    calcium_mg: Optional[float] = None
+    magnesium_mg: Optional[float] = None
+    zinc_mg: Optional[float] = None
+    potassium_mg: Optional[float] = None
+    sodium_mg: Optional[float] = None
+    vitamin_c_mg: Optional[float] = None
+    folate_ug: Optional[float] = None
+    vitamin_b6_mg: Optional[float] = None
+
+    model_config = ConfigDict(from_attributes=True)
+
 class RecipeSummary(BaseModel):
     id: str
     name: str
@@ -24,6 +42,7 @@ class RecipeSummary(BaseModel):
     tags: List[str] = []
     meal_type: List[str] = []
     instructions: List[str] = []
+    nutrition_per_serving: Optional[RecipeNutritionPerServing] = None
     ingredients: List[RecipeIngredientItem] = []
     source_ids: List[str] = []
 

@@ -7,14 +7,60 @@ from backend.app.models.food import Food
 from backend.app.models.source import Source
 from backend.app.schemas.recipe import (
     RecipeSummary, RecipeDetail, RecipeIngredientItem,
-    RankedRecipe, ShoppingListResponse, ShoppingListItem
+    RankedRecipe, ShoppingListResponse, ShoppingListItem,
+    RecipeNutritionPerServing
 )
 from backend.app.schemas.taxonomy import SourceSchema
 from backend.app.services.food_service import FoodService
 
 class RecipeService:
     @staticmethod
-    def _to_summary(recipe: Recipe) -> RecipeSummary:
+    def _compute_nutrition_per_serving(recipe: Recipe) -> Optional[RecipeNutritionPerServing]:
+        if recipe.nutrition_per_serving and any(v for v in recipe.nutrition_per_serving.values() if v is not None):
+            try:
+                return RecipeNutritionPerServing(**recipe.nutrition_per_serving)
+            except Exception:
+                pass
+
+        servings = recipe.servings or 1
+        if servings <= 0:
+            servings = 1
+
+        totals = {
+            "energy_kcal": 0.0,
+            "protein_g": 0.0,
+            "carbohydrate_g": 0.0,
+            "fat_g": 0.0,
+            "fiber_g": 0.0,
+            "iron_mg": 0.0,
+            "calcium_mg": 0.0,
+            "magnesium_mg": 0.0,
+            "zinc_mg": 0.0,
+            "potassium_mg": 0.0,
+            "sodium_mg": 0.0,
+            "vitamin_c_mg": 0.0,
+            "folate_ug": 0.0,
+            "vitamin_b6_mg": 0.0,
+        }
+        has_nutrients = False
+
+        for ing in recipe.ingredients:
+            if ing.food and ing.quantity:
+                ratio = float(ing.quantity) / 100.0
+                for nutr_key in totals.keys():
+                    val = getattr(ing.food, nutr_key, None)
+                    if val is not None:
+                        totals[nutr_key] += float(val) * ratio
+                        has_nutrients = True
+
+        if not has_nutrients:
+            return None
+
+        per_serving = {k: round(v / servings, 2) for k, v in totals.items()}
+        return RecipeNutritionPerServing(**per_serving)
+
+    @classmethod
+    def _to_summary(cls, recipe: Recipe) -> RecipeSummary:
         ingredients = []
         for ing in recipe.ingredients:
             food_name = ing.food.name if ing.food else ing.food_id
@@ -26,6 +72,8 @@ class RecipeService:
                     unit=ing.unit
                 )
             )
+
+        nutrition_per_serving = cls._compute_nutrition_per_serving(recipe)
 
         return RecipeSummary(
             id=recipe.id,
@@ -41,6 +89,7 @@ class RecipeService:
             tags=recipe.tags,
             meal_type=recipe.meal_type,
             instructions=recipe.instructions,
+            nutrition_per_serving=nutrition_per_serving,
             ingredients=ingredients,
             source_ids=recipe.source_ids
         )

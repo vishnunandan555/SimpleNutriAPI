@@ -195,7 +195,19 @@ curl -s -X POST http://localhost:8000/api/v1/cycle/estimate \
   "phase": "menstrual",
   "phase_name": "Menstrual Phase",
   "day_range": "Days 1–5",
-  "description": "Estrogen and progesterone are at baseline. Focus on replenishing micronutrients lost through menstrual blood and combating fatigue.",
+  "description": "Estrogen and progesterone are at baseline. Support overall nutritional adequacy with dietary iron, vitamin C, and magnesium for comfort.",
+  "nutrition_focus": [
+    "iron",
+    "vitamin_c",
+    "protein",
+    "folate"
+  ],
+  "nutrition_context": [
+    "Menstrual blood loss increases iron requirements over time.",
+    "Vitamin C can improve absorption of non-heme iron from plant foods.",
+    "Adequate protein supports tissue repair and cellular recovery.",
+    "Hydration and light mineral balance support overall comfort."
+  ],
   "recommended_tags": [
     "iron",
     "calcium",
@@ -203,11 +215,12 @@ curl -s -X POST http://localhost:8000/api/v1/cycle/estimate \
     "vitamin_c",
     "anti_inflammatory"
   ],
-  "biological_rationale": "Iron losses during menses require dietary repletion accompanied by Vitamin C for non-heme absorption. Magnesium eases uterine cramping.",
+  "biological_rationale": "Menstrual blood loss increases iron requirements over time. Vitamin C can improve non-heme iron absorption.",
   "dietary_tips": [
     "Pair plant-based iron sources (ragi, spinach, lentils) with Vitamin C (lemon, amla) for enhanced bio-availability.",
     "Stay hydrated and prioritize warm, easily digestible lentil broths and porridges."
-  ]
+  ],
+  "disclaimer": "Personalization provides general supportive nutritional guidelines based on cycle day. It is not a diagnostic tool or medical prescription."
 }
 ```
 
@@ -215,7 +228,7 @@ curl -s -X POST http://localhost:8000/api/v1/cycle/estimate \
 
 ### Step 3: Rank Foods for Nutritional Priorities
 
-Using the `recommended_tags` from the estimated phase (`["iron", "calcium"]`), query the multi-factor food ranking engine.
+Using the `nutrition_focus` (or `recommended_tags`) from the estimated phase (`["iron", "calcium"]`), query the multi-factor food ranking engine. You can also pass contextual preferences such as `excluded_food_ids` (allergies/dislikes) and `preferred_food_ids` (kitchen staples/favorites):
 
 ```bash
 curl -s -X POST http://localhost:8000/api/v1/recommendations/foods \
@@ -224,6 +237,8 @@ curl -s -X POST http://localhost:8000/api/v1/recommendations/foods \
     "target_tags": ["iron", "calcium"],
     "diet": "vegetarian",
     "region": "india",
+    "preferred_food_ids": ["a010_ragi"],
+    "excluded_food_ids": ["soybean"],
     "limit": 3
   }' | jq .
 ```
@@ -328,6 +343,16 @@ curl -s -X POST http://localhost:8000/api/v1/recommendations/recipes \
     "prep_time_min": 20,
     "cook_time_min": 15,
     "servings": 4,
+    "nutrition_per_serving": {
+      "energy_kcal": 218.4,
+      "protein_g": 5.86,
+      "carbohydrate_g": 38.61,
+      "fat_g": 3.78,
+      "fiber_g": 6.89,
+      "iron_mg": 2.18,
+      "calcium_mg": 149.25,
+      "magnesium_mg": 57.3
+    },
     "ingredients": [
       { "food_id": "a010_ragi", "food_name": "Ragi", "quantity": 150.0, "unit": "g" },
       { "food_id": "b003_black_gram_dal", "food_name": "Black gram, dal", "quantity": 50.0, "unit": "g" },
@@ -507,37 +532,56 @@ SimpleNutri works out of the box with the embedded SQLite database (`nutrition.d
 
 The `mobile_bundle/` directory is isolated from the backend and contains everything required for offline native/mobile apps:
 - `mobile_bundle/nutrition.db`: Clean SQLite database with 548 canonical foods, 55 recipes across 9 cuisines, 11,265 food-nutrient pairs, and SQLite FTS5 search.
-- `mobile_bundle/flutter/nutrition_offline_service.dart`: Ready-to-drop pure Dart service.
+- `mobile_bundle/flutter/nutrition_offline_service.dart`: Ready-to-drop pure Dart service with on-device cycle calculation, recipe ranking with nutrition per serving, and daily intake progress tracking.
 
 ### Quick Flutter Setup:
 1. Copy `mobile_bundle/nutrition.db` into your Flutter app's `assets/` directory.
-2. Add `sqflite` and `path_provider` to your `pubspec.yaml`:
+2. Add `sqflite` and `path` to your `pubspec.yaml`:
    ```yaml
    dependencies:
      flutter:
        sdk: flutter
      sqflite: ^2.3.0
-     path: ^1.8.3
+     path: ^1.9.0
    ```
 3. Initialize and query completely offline:
    ```dart
-   import 'package:nutrition_app/nutrition_offline_service.dart';
+   import 'package:your_app/services/nutrition_offline_service.dart';
 
    void main() async {
      WidgetsFlutterBinding.ensureInitialized();
-     final service = NutritionOfflineService();
-     await service.init();
 
-     // Fast full-text food search across 14 languages
-     final foods = await service.searchFoods('spinach');
-     print('Found: ${foods.first['name']}');
-
-     // Estimate cycle phase & nutrition priorities offline
-     final phase = service.estimateCyclePhase(
-       lastPeriodStart: DateTime.now().subtract(const Duration(days: 4)),
-       cycleLengthDays: 28,
+     // 1. Calculate Cycle Phase (100% offline & private)
+     final phase = NutritionOfflineService.calculateCyclePhase(
+       DateTime.now().subtract(const Duration(days: 4)),
+       cycleLength: 28,
      );
-     print('Phase: ${phase['phase_name']}');
+     print('Phase: ${phase.phaseName}');
+     print('Focus: ${phase.nutritionFocus}'); // [iron, vitamin_c, protein, folate]
+
+     // 2. Fast food search across 14 languages
+     final foods = await NutritionOfflineService.searchFoods('ragi');
+     print('Found: ${foods.first.name} (Calcium: ${foods.first.calciumMg} mg)');
+
+     // 3. Match kitchen inventory and get recipes with nutrition per serving
+     final recipes = await NutritionOfflineService.rankRecipes(
+       availableFoodIds: ['ragi', 'rice', 'urad_dal', 'coconut_oil'],
+       targetTags: phase.nutritionFocus,
+     );
+     final top = recipes.first;
+     print('Recipe: ${top['recipe_name']}, Serving Calories: ${top['nutrition_per_serving']['energy_kcal']} kcal');
+
+     // 4. Track Daily Intake & Progress Bars (Local Home Screen Ledger)
+     final log = DailyIntakeLogItem(
+       id: "log_001",
+       timestamp: DateTime.now(),
+       name: top['recipe_name'],
+       portionOrServings: 1.0,
+       meal: "breakfast",
+       nutrients: top['nutrition_per_serving'],
+     );
+     final totals = NutritionOfflineService.calculateDailyNutrientProgress([log]);
+     print('Iron Progress: ${totals.progressPercentages['iron_mg']?.toStringAsFixed(1)}%');
    }
    ```
 
@@ -559,12 +603,12 @@ The `mobile_bundle/` directory is isolated from the backend and contains everyth
 | **Nutrients** | `GET` | `/api/v1/nutrients` | Master list of 21 tracked nutrients and standard units |
 | | `GET` | `/api/v1/nutrients/{nutrient_id}` | Nutrient metadata and unit definition |
 | | `GET` | `/api/v1/nutrients/{nutrient_id}/top-foods` | Ranked foods richest in a nutrient per 100g edible portion |
-| **Recipes** | `GET` | `/api/v1/recipes` | Filter recipes by `region`, `country`, `cuisine`, `diet`, `tag`, `ingredient`, or `meal_type` |
+| **Recipes** | `GET` | `/api/v1/recipes` | Filter recipes by `region`, `country`, `cuisine`, `diet`, `tag`, `ingredient`, or `meal_type` (includes computed `nutrition_per_serving`) |
 | | `GET` | `/api/v1/recipes/search` | Search recipes by title, description, or ingredients |
-| | `GET` | `/api/v1/recipes/{recipe_id}` | Recipe detail with quantities, units, and step-by-step instructions |
-| **Recommendations** | `GET` | `/api/v1/cycle/phases` | Supportive cycle phase nutritional priorities and target nutrients |
+| | `GET` | `/api/v1/recipes/{recipe_id}` | Recipe detail with quantities, units, instructions, and `nutrition_per_serving` |
+| **Recommendations** | `GET` | `/api/v1/cycle/phases` | Supportive cycle phase nutritional priorities (`nutrition_focus`, `nutrition_context`) |
 | | `POST` | `/api/v1/cycle/estimate` | Stateless cycle day and phase calculation with wellness priorities |
-| | `POST` | `/api/v1/recommendations/foods` | 6-factor weighted food ranking engine (SRS Section 9.4) |
+| | `POST` | `/api/v1/recommendations/foods` | 6-factor weighted food ranking engine with `excluded_food_ids` & `preferred_food_ids` |
 | | `POST` | `/api/v1/recommendations/recipes` | Kitchen match % + nutrition synergy ranking (SRS Section 10) |
 | | `POST` | `/api/v1/recommendations/shopping-list` | Consolidated deduplicated shopping list (SRS Section 12) |
 | **Taxonomy** | `GET` | `/api/v1/categories` | Food categories |
@@ -576,14 +620,22 @@ The `mobile_bundle/` directory is isolated from the backend and contains everyth
 
 ---
 
-## 📜 Data Provenance & Attribution
+## 📜 Data Provenance & Legal Disclosures
 
+### Data Citations & Academic Attribution
 - **ICMR-NIN Indian Food Composition Tables (IFCT 2017)**:
-  - *Citation*: Longvah, T., Ananthan, R., Bhaskarachary, K., & Venkaiah, K. (2017). *Indian Food Composition Tables*. National Institute of Nutrition, Indian Council of Medical Research, Hyderabad, India.
-  - Sourced under fair-use academic attribution for nutritional research and public guidance.
+  - *Citation*: Longvah, T., Ananthan, R., Bhaskarachary, K., & Venkaiah, K. (2017). *Indian Food Composition Tables*. National Institute of Nutrition, Indian Council of Medical Research, Hyderabad, Telangana, India.
+  - Sourced and structured for nutritional reference and academic non-commercial research under fair use attribution.
 - **USDA FoodData Central**:
   - Foundation Foods Database, Agricultural Research Service, U.S. Department of Agriculture. Public Domain.
 - **ICMR-NIN Dietary Guidelines for Indians (2024)**:
-  - Evidence base for menstrual and lifestyle micronutrient priorities.
-- **Recipes**:
-  - Curated canonical recipes released under [Creative Commons Attribution 4.0 (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/).
+  - Reference basis for RDA targets and supportive lifestyle nutritional priorities.
+- **Recipes & Service Code**:
+  - Curated canonical recipes and application architecture released under [Creative Commons Attribution 4.0 (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/) and MIT License.
+
+### Commercial & Redistribution Notice
+> [!IMPORTANT]
+> The IFCT 2017 is an official publication of the Indian Council of Medical Research (ICMR) – National Institute of Nutrition (NIN). While this repository structures and normalizes the data for research, prototyping, and hackathon development, commercial distribution in public mobile apps or commercial SaaS offerings should independently verify electronic redistribution policies or obtain formal licensing from ICMR-NIN.
+>
+> All cycle nutritional context and dietary guidance provided by this API are strictly for **general supportive nutritional awareness** and do not constitute clinical diagnosis, medical treatment, or prescription.
+
