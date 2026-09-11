@@ -42,7 +42,7 @@ TAGS_METADATA = [
     },
     {
         "name": "Cycle & Recommendations",
-        "description": "Evidence-based cycle personalization, 6-factor food ranking, kitchen recipe matching, and deduplicated shopping lists.",
+        "description": "Cycle-aligned nutritional priorities, 6-factor food ranking, kitchen recipe matching, and deduplicated shopping lists.",
     },
     {
         "name": "Taxonomy",

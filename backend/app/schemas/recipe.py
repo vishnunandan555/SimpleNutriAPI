@@ -22,6 +22,8 @@ class RecipeSummary(BaseModel):
     cook_time_min: Optional[int] = None
     servings: Optional[int] = 2
     tags: List[str] = []
+    meal_type: List[str] = []
+    instructions: List[str] = []
     ingredients: List[RecipeIngredientItem] = []
     source_ids: List[str] = []
 
@@ -36,6 +38,7 @@ class RecipeRankingRequest(BaseModel):
     diet: Optional[str] = None
     cuisine: Optional[str] = None
     region: Optional[str] = None
+    meal_type: Optional[str] = None
 
 class RankedRecipe(BaseModel):
     recipe: RecipeSummary

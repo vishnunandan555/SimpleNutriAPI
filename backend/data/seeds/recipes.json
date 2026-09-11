@@ -5,19 +5,1995 @@
     "description": "Nutrient-dense fermented crepes made with finger millet and black gram, naturally packed with calcium and iron.",
     "region": "india",
     "country": "IN",
-    "cuisine": "south_indian",
-    "diet": ["vegetarian", "vegan", "gluten_free"],
+    "cuisine": "kerala",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "dinner"
+    ],
     "prep_time_min": 20,
     "cook_time_min": 15,
     "servings": 4,
     "ingredients": [
-      { "food_id": "a010_ragi", "quantity": 150, "unit": "g" },
-      { "food_id": "b003_black_gram_dal", "quantity": 50, "unit": "g" },
-      { "food_id": "a015_rice_raw_milled", "quantity": 50, "unit": "g" },
-      { "food_id": "t001_coconut_oil", "quantity": 10, "unit": "g" }
+      {
+        "food_id": "a010_ragi",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "b003_black_gram_dal",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "a015_rice_raw_milled",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
     ],
-    "tags": ["calcium", "iron", "fiber", "luteal_phase", "menstrual_phase", "gluten_free"],
-    "source_ids": ["source-canonical-recipes"]
+    "instructions": [
+      "Wash and soak ragi, black gram (urad dal), and raw rice together in water for 4-6 hours.",
+      "Grind the soaked grains in a wet grinder or high-speed blender into a smooth, pourable batter.",
+      "Add salt and allow the batter to naturally ferment in a warm spot for 8-10 hours.",
+      "Heat a seasoned cast-iron skillet, pour a ladle of batter, and spread thinly in concentric circles.",
+      "Drizzle virgin coconut oil along the edges and cook on medium flame until golden and crispy. Flip briefly and serve."
+    ],
+    "tags": [
+      "calcium",
+      "iron",
+      "fiber",
+      "luteal_phase",
+      "menstrual_phase",
+      "gluten_free"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "cheera_thoran",
+    "name": "Kerala Cheera Thoran (Amaranth Coconut Stir-fry)",
+    "description": "Traditional Kerala red amaranth greens saut\u00e9ed with freshly grated coconut, shallots, and virgin coconut oil.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "kerala",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 12,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "c003_amaranth_leaves_red",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "g018_onion_small",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Wash red amaranth (cheera) leaves thoroughly under running water, drain, and finely chop.",
+      "Coarsely crush fresh coconut, shallots, green chillies, garlic, and turmeric powder in a mortar or spice blender.",
+      "Heat coconut oil in a pan, splutter mustard seeds, and add fresh curry leaves.",
+      "Add chopped cheera leaves and salt. Cover and cook on low heat for 5 minutes without adding extra water.",
+      "Stir in the coconut mixture, cook uncovered for 3-4 minutes until aromatic, and serve hot with steamed rice."
+    ],
+    "tags": [
+      "iron",
+      "calcium",
+      "potassium",
+      "vitamin_c",
+      "menstrual_phase",
+      "kerala_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "kerala_avial",
+    "name": "Traditional Kerala Avial",
+    "description": "Wholesome melange of ash gourd, drumsticks, carrots, and beans gently cooked in a rustic coconut-curd sauce with curry leaves.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "kerala",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "d001_ash_gourd",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "d046_drumstick",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "f002_carrot_orange",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "l005_curd_dahi",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Cut ash gourd, carrots, and drumsticks into uniform 2-inch batons.",
+      "Simmer the vegetables with turmeric powder, green chillies, salt, and half a cup of water until fork-tender.",
+      "Grind freshly grated coconut and cumin seeds into a coarse paste without adding too much water.",
+      "Add the coconut paste to the cooked vegetables and let simmer gently for 2 minutes.",
+      "Turn off heat, stir in whisked fresh curd, top with a handful of fresh curry leaves, and drizzle raw coconut oil."
+    ],
+    "tags": [
+      "fiber",
+      "potassium",
+      "calcium",
+      "anti_inflammatory",
+      "ovulatory_phase",
+      "kerala_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "kerala_kadala_curry",
+    "name": "Malabar Kadala Curry (Black Chickpeas in Roasted Coconut)",
+    "description": "Protein-dense whole black chickpeas simmered in a roasted coconut and fragrant spice reduction.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "kerala",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "lunch"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "b002_bengal_gram_whole",
+        "quantity": 160,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g024_coriander_seeds",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak black chickpeas (kala chana / kadala) overnight and pressure cook with salt until soft.",
+      "In a pan, dry-roast grated coconut, coriander seeds, and curry leaves until deep golden brown and aromatic.",
+      "Cool the roasted coconut mixture and grind into a rich, smooth paste.",
+      "Heat coconut oil, saut\u00e9 sliced onions, ginger, garlic, and chopped tomatoes until softened.",
+      "Add the cooked chickpeas with their cooking broth and the coconut paste. Simmer for 10-12 minutes until gravy thickens."
+    ],
+    "tags": [
+      "protein",
+      "iron",
+      "zinc",
+      "complex_carbs",
+      "follicular_phase",
+      "luteal_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "kerala_vegetable_stew",
+    "name": "Kerala Mild Vegetable Stew",
+    "description": "Gentle coconut milk stew loaded with carrots, potatoes, and whole spices, perfect for easy digestion.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "kerala",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "f006_potato_brown_skin_big",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "f002_carrot_orange",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g031_pepper_black",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Extract fresh thin and thick coconut milk from grated coconut using warm water.",
+      "Saut\u00e9 thinly sliced onions, ginger, green chillies, and curry leaves in coconut oil until translucent.",
+      "Add diced potatoes, carrots, and thin coconut milk with a pinch of salt. Simmer until vegetables are cooked.",
+      "Crush black pepper coarsely and stir in.",
+      "Pour in the thick coconut milk, heat on low flame without boiling, turn off heat, and serve with appam or rice."
+    ],
+    "tags": [
+      "potassium",
+      "complex_carbs",
+      "healthy_fats",
+      "menstrual_phase",
+      "comfort_food"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "moru_curry",
+    "name": "Kerala Moru Kachiyathu (Seasoned Buttermilk Curry)",
+    "description": "Probiotic-rich tempered buttermilk curry infused with ginger, garlic, turmeric, shallots, and curry leaves.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "kerala",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch"
+    ],
+    "prep_time_min": 5,
+    "cook_time_min": 8,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "l005_curd_dahi",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "g018_onion_small",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Whisk fresh curd with salt, turmeric powder, and 100ml water until smooth and lump-free.",
+      "Heat coconut oil in a clay pot or pan; splutter mustard seeds and cumin seeds.",
+      "Add thinly sliced shallots, crushed ginger, garlic, slit green chillies, and curry leaves. Saut\u00e9 until fragrant.",
+      "Lower heat to minimum and pour in the whisked seasoned curd while stirring continuously.",
+      "Warm gently on low heat until steam starts rising (do not boil, to prevent curdling). Serve with warm rice."
+    ],
+    "tags": [
+      "calcium",
+      "gut_health",
+      "probiotics",
+      "follicular_phase",
+      "digestion"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "tamil_sambar",
+    "name": "Traditional Tamil Nadu Drumstick Sambar",
+    "description": "Classic protein-packed toor dal stew simmered with drumsticks, shallots, ripe tomatoes, and fragrant sambar spices.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "tamil_nadu",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "b021_red_gram_dal",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "d046_drumstick",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "g018_onion_small",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "e064_tamarind_pulp",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "food_id": "g024_coriander_seeds",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t004_gingelly_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Pressure cook toor dal (red gram dal) with turmeric powder and water until soft and mushy; whisk smooth.",
+      "In a pot, extract tamarind juice in 1 cup of warm water; add drumstick pieces, shallots, tomatoes, and salt.",
+      "Boil until raw tamarind smell dissipates and drumsticks are tender.",
+      "Add the cooked toor dal and freshly pounded coriander-cumin sambar powder; simmer for 5 minutes.",
+      "Temper mustard seeds and curry leaves in hot gingelly (sesame) oil and pour into the bubbling sambar."
+    ],
+    "tags": [
+      "protein",
+      "iron",
+      "fiber",
+      "potassium",
+      "follicular_phase",
+      "tamil_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "tomato_rasam",
+    "name": "Pepper Tomato Rasam",
+    "description": "Tangy and revitalizing South Indian broth infused with crushed black pepper, cumin, garlic, and ripe tomatoes.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "tamil_nadu",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 12,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "e064_tamarind_pulp",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g031_pepper_black",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 5,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Crush tomatoes by hand with tamarind extract, turmeric powder, and 300ml water.",
+      "In a mortar, coarsely crush black peppercorns, cumin seeds, and unpeeled garlic cloves.",
+      "Bring the tomato-tamarind broth to a boil until the raw aroma softens.",
+      "Add the crushed pepper-cumin-garlic mixture and bring to a gentle simmer until frothy (do not rolling boil).",
+      "Temper mustard seeds and curry leaves in ghee, pour over rasam, and garnish generously with fresh coriander leaves."
+    ],
+    "tags": [
+      "vitamin_c",
+      "anti_inflammatory",
+      "hydration",
+      "menstrual_phase",
+      "digestion"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "ven_pongal",
+    "name": "Classic Tamil Ven Pongal",
+    "description": "Comforting porridge of raw rice and yellow moong dal tempered with golden cashews, cumin, ginger, and desi ghee.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "tamil_nadu",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "a015_rice_raw_milled",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "b010_green_gram_dal",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g031_pepper_black",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Lightly roast yellow moong dal in a dry pan until aromatic, then mix with washed raw rice.",
+      "Pressure cook the rice and dal mixture with 4 cups of water and salt until very soft and creamy.",
+      "Heat ghee in a small pan; add whole black peppercorns, cumin seeds, and finely chopped ginger.",
+      "Add fresh curry leaves and saut\u00e9 until the cumin is fragrant.",
+      "Pour the sizzling ghee tempering directly into the cooked pongal and mix thoroughly until velvety."
+    ],
+    "tags": [
+      "protein",
+      "complex_carbs",
+      "comfort_food",
+      "luteal_phase",
+      "digestible"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "kootu_spinach_moong",
+    "name": "Keerai Moong Kootu (Spinach Lentil Stew)",
+    "description": "Nourishing and mildly spiced Tamil stew combining fresh spinach, yellow moong dal, and a cumin-coconut paste.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "tamil_nadu",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "c033_spinach",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "b010_green_gram_dal",
+        "quantity": 70,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Pressure cook moong dal with turmeric powder and water until soft.",
+      "Wash and chop spinach; add to cooked dal with half a cup of water and cook for 5 minutes.",
+      "Grind coconut, green chillies, and cumin seeds into a fine paste.",
+      "Add the coconut paste and salt to the simmering spinach-dal mixture; cook for 3 minutes.",
+      "Temper mustard seeds in coconut oil, stir into kootu, and serve warm."
+    ],
+    "tags": [
+      "iron",
+      "folate",
+      "protein",
+      "magnesium",
+      "menstrual_phase",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "sundal_chana",
+    "name": "Temple Sundal (Spiced Tempered Chickpeas)",
+    "description": "Protein-rich white chickpeas tossed with mustard seeds, curry leaves, ginger, and fresh grated coconut.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "tamil_nadu",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "snack"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b001_bengal_gram_dal",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t004_gingelly_oil",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak chickpeas or chana dal in water for 2-4 hours, then boil with salt until cooked yet firm.",
+      "Heat gingelly oil in a pan, add mustard seeds and let them crackle.",
+      "Add slit green chillies, finely grated ginger, and curry leaves; saut\u00e9 for 30 seconds.",
+      "Add the drained cooked chickpeas and toss over medium heat for 2 minutes to absorb seasonings.",
+      "Turn off heat, fold in freshly grated coconut, and serve as an energy-dense tea-time snack."
+    ],
+    "tags": [
+      "protein",
+      "fiber",
+      "zinc",
+      "follicular_phase",
+      "healthy_snack"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "paruppu_urundai_rasam",
+    "name": "Paruppu Urundai Rasam (Lentil Dumpling Broth)",
+    "description": "Steamed spiced toor and chana dal dumplings bathed in a soothing, tangy rasam broth.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "tamil_nadu",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 20,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b021_red_gram_dal",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "b001_bengal_gram_dal",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "e064_tamarind_pulp",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g031_pepper_black",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "t004_gingelly_oil",
+        "quantity": 6,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak toor and chana dal together for 1 hour; grind coarsely with salt and cumin seeds into a thick paste.",
+      "Shape the lentil paste into small lime-sized balls and steam in an idli steamer for 8-10 minutes.",
+      "Simmer tamarind extract with chopped tomatoes, turmeric powder, and salt until raw flavor dissipates.",
+      "Add crushed black pepper, cumin, and garlic to the simmering rasam broth.",
+      "Gently drop the steamed lentil dumplings into the rasam, simmer for 2 minutes, and serve hot."
+    ],
+    "tags": [
+      "protein",
+      "iron",
+      "comfort_food",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "moringa_keerai_poriyal",
+    "name": "Drumstick Leaves (Moringa) Poriyal",
+    "description": "Iron and calcium powerhouse: fresh drumstick leaves saut\u00e9ed with shallots, crushed cumin, and fresh coconut.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "tamil_nadu",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 10,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "c019_drumstick_leaves",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "g018_onion_small",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t004_gingelly_oil",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Strip drumstick leaves (moringa keerai) from stalks, wash thoroughly, and drain well.",
+      "Heat gingelly oil in a skillet, splutter mustard seeds, and saut\u00e9 sliced shallots with green chillies until soft.",
+      "Add the drumstick leaves and salt; saut\u00e9 on medium heat without covering until wilted (approx 5 minutes).",
+      "Ensure the moisture evaporates completely and the greens are tender.",
+      "Toss in fresh grated coconut, stir for 1 minute, and remove from heat."
+    ],
+    "tags": [
+      "calcium",
+      "iron",
+      "antioxidant",
+      "menstrual_phase",
+      "moringa_superfood"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "bisi_bele_bath",
+    "name": "Karnataka Bisi Bele Bath",
+    "description": "Iconic Karnataka one-pot meal of rice and toor dal simmered with vegetables and freshly ground aromatic spices.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "karnataka",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 20,
+    "cook_time_min": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "a015_rice_raw_milled",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "b021_red_gram_dal",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "f002_carrot_orange",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "d046_drumstick",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g018_onion_small",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "e064_tamarind_pulp",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "food_id": "g024_coriander_seeds",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Cook rice and toor dal together in a pressure cooker with 4.5 cups of water until very soft.",
+      "Boil carrots, drumsticks, and shallots in tamarind water with salt until tender.",
+      "Roast coriander seeds, cumin, and red chillies; grind into fragrant Bisi Bele Bath powder.",
+      "Combine cooked dal-rice, cooked vegetables, and spice powder; simmer on low heat for 8 minutes.",
+      "Temper mustard seeds and curry leaves in ghee, pour into bath, and serve steaming hot."
+    ],
+    "tags": [
+      "protein",
+      "complex_carbs",
+      "fiber",
+      "luteal_phase",
+      "karnataka_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "ragi_mudde_saaru",
+    "name": "Ragi Mudde with Bassaru",
+    "description": "Traditional rustic Karnataka finger millet dumplings served with a nutrient-dense spiced lentil broth.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "karnataka",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 25,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "a010_ragi",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "b021_red_gram_dal",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g031_pepper_black",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Boil toor dal and spinach in water until cooked; strain the nutritious broth (saaru water) into a bowl.",
+      "In a heavy pot, boil 240ml water with a tsp of ghee; slowly sprinkle ragi flour while stirring vigorously to avoid lumps.",
+      "Cover and steam ragi dough on low heat for 5 minutes; shape into smooth spherical balls (mudde) using wet hands.",
+      "For the bassaru, grind a small portion of cooked dal with garlic, cumin, pepper, and tomatoes; stir into the broth.",
+      "Simmer the saaru for 5 minutes and serve alongside the warm ragi mudde with a dab of ghee."
+    ],
+    "tags": [
+      "calcium",
+      "iron",
+      "magnesium",
+      "complex_carbs",
+      "luteal_phase",
+      "menstrual_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "akki_roti",
+    "name": "Karnataka Akki Roti",
+    "description": "Crisp and flavorful rice flour flatbreads studded with finely chopped onions, fresh coriander, cumin, and green chillies.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "karnataka",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "a015_rice_raw_milled",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "In a wide bowl, mix fine rice flour, finely diced onions, coriander leaves, chopped green chillies, cumin, and grated coconut.",
+      "Add warm water gradually to knead into a soft, pliable dough.",
+      "Pat a ball of dough thinly directly onto a greased pan or banana leaf using wet fingertips.",
+      "Make small steam holes in the roti, drizzle coconut oil, and cook covered on medium heat until base turns golden and crisp.",
+      "Flip and cook the other side for 1 minute; serve hot with coconut chutney or spiced dal."
+    ],
+    "tags": [
+      "complex_carbs",
+      "easy_digest",
+      "gluten_free",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "kosambari_moong",
+    "name": "Hesarubele Kosambari (Moong Cucumber Salad)",
+    "description": "Light and refreshing Karnataka salad made with soaked yellow moong dal, crunchy cucumbers, grated coconut, and lemon.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "karnataka",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "snack",
+      "lunch"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 2,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "b010_green_gram_dal",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "d043_cucumber_green_elongate",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 5,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak yellow moong dal in water for 45 minutes; drain completely.",
+      "Finely dice the fresh cucumber and mix with drained moong dal, grated coconut, and chopped coriander.",
+      "Temper mustard seeds and finely minced green chillies in hot coconut oil.",
+      "Pour the tempering over the salad.",
+      "Squeeze fresh lemon juice, add salt just before serving, and toss well."
+    ],
+    "tags": [
+      "protein",
+      "hydration",
+      "potassium",
+      "vitamin_c",
+      "ovulatory_phase",
+      "raw_salad"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "menthya_soppu_pulao",
+    "name": "Menthya Soppu Pulao (Fenugreek Leaf Rice)",
+    "description": "Fragrant Karnataka style rice pilaf packed with bitter-sweet fresh fenugreek leaves, peas, and whole spices.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "karnataka",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "a015_rice_raw_milled",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "c020_fenugreek_leaves",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Wash and pluck tender fresh methi (fenugreek) leaves; chop finely.",
+      "Heat ghee in a pot, add cumin seeds, sliced onions, minced ginger, and garlic; saut\u00e9 until golden.",
+      "Add chopped fenugreek leaves and turmeric powder; saut\u00e9 for 3-4 minutes to mellow the bitterness.",
+      "Stir in washed raw rice and saut\u00e9 for 1 minute.",
+      "Add 2.5 cups of water and salt; cover and cook on low heat for 15 minutes until grains are fluffy."
+    ],
+    "tags": [
+      "iron",
+      "calcium",
+      "blood_sugar_support",
+      "luteal_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "majjige_huli",
+    "name": "Karnataka Majjige Huli (Ash Gourd Buttermilk Stew)",
+    "description": "Succulent ash gourd simmered in a spiced coconut-curd gravy flavored with cumin, ginger, and mustard.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "karnataka",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "d001_ash_gourd",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "l005_curd_dahi",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Dice ash gourd into cubes and boil with turmeric powder and salt until translucent and tender.",
+      "Grind fresh grated coconut, green chillies, ginger, and cumin seeds into a smooth paste.",
+      "Add the coconut paste to the cooked ash gourd and simmer for 3 minutes.",
+      "Turn off heat and stir in whisked yogurt (curd) smoothly.",
+      "Temper mustard seeds and curry leaves in hot coconut oil and pour over the gravy."
+    ],
+    "tags": [
+      "hydration",
+      "calcium",
+      "gut_health",
+      "cooling",
+      "ovulatory_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "andhra_tomato_pappu",
+    "name": "Andhra Tomato Pappu",
+    "description": "Tangy and hearty Andhra style toor dal cooked with ripe tomatoes, green chillies, and a generous garlic-mustard tadka.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "andhra_telangana",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "b021_red_gram_dal",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "In a pressure cooker, combine toor dal, chopped tomatoes, green chillies, turmeric, and 2 cups of water.",
+      "Cook for 4 whistles until dal is thoroughly softened; mash coarsely with a wooden masher (dal thaduka) and add salt.",
+      "Heat ghee in a tadka pan; add mustard seeds, cumin seeds, and crushed garlic cloves.",
+      "Saut\u00e9 until garlic turns fragrant and golden brown, then toss in fresh curry leaves.",
+      "Pour the sizzling garlic tadka directly into the mashed dal, mix well, and serve with hot rice and ghee."
+    ],
+    "tags": [
+      "protein",
+      "vitamin_c",
+      "potassium",
+      "follicular_phase",
+      "andhra_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "pesarattu",
+    "name": "Andhra Pesarattu (Whole Moong Dosa)",
+    "description": "High-protein unfermented crepes made from soaked whole green moong beans, blended with fresh ginger and green chillies.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "andhra_telangana",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b011_green_gram_whole",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "a015_rice_raw_milled",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 12,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "t005_groundnut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak whole green moong and raw rice in water for 4-6 hours; drain well.",
+      "Grind with ginger, green chillies, cumin seeds, and salt into a smooth, thick batter (no fermentation needed).",
+      "Heat a tawa on medium-high; pour a ladle of batter and spread into a thin round crepe.",
+      "Sprinkle finely diced onions on top, press lightly with a spatula, and drizzle peanut oil along the edges.",
+      "Cook until golden brown and crisp underneath. Fold and serve hot with ginger chutney."
+    ],
+    "tags": [
+      "protein",
+      "iron",
+      "folate",
+      "fiber",
+      "follicular_phase",
+      "andhra_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "gongura_style_pappu",
+    "name": "Tangy Palak-Tamarind Andhra Dal",
+    "description": "Spicy and tangy Andhra lentil preparation featuring fresh spinach cooked with tamarind, green chillies, and garlic.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "andhra_telangana",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "b021_red_gram_dal",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "e064_tamarind_pulp",
+        "quantity": 20,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Pressure cook toor dal with chopped spinach, slit green chillies, tamarind pulp, and turmeric until tender.",
+      "Mash the cooked dal and spinach thoroughly with a wooden ladle until creamy; add salt.",
+      "Heat ghee in a pan, add mustard seeds, and saut\u00e9 crushed garlic cloves until golden brown.",
+      "Pour the hot tadka into the mashed spinach dal.",
+      "Simmer for 2 minutes to meld flavors and serve hot with steamed rice."
+    ],
+    "tags": [
+      "iron",
+      "folate",
+      "protein",
+      "vitamin_c",
+      "menstrual_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "majjiga_pulusu",
+    "name": "Andhra Majjiga Pulusu (Vegetable Buttermilk Stew)",
+    "description": "Tangy Andhra yogurt stew loaded with bottle gourd or ash gourd, seasoned with ginger-green chilli paste and mustard.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "andhra_telangana",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "l005_curd_dahi",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "d001_ash_gourd",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "b001_bengal_gram_dal",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t005_groundnut_oil",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak chana dal for 20 minutes; grind with ginger and green chillies into a smooth seasoning paste.",
+      "Boil ash gourd pieces in water with turmeric and salt until tender.",
+      "Whisk curd with 1 cup of water and the ground dal-ginger paste; pour into the cooked ash gourd.",
+      "Heat gently on low heat while stirring continuously until warm (do not boil).",
+      "Temper mustard seeds and curry leaves in oil, add to the stew, and turn off heat."
+    ],
+    "tags": [
+      "calcium",
+      "gut_health",
+      "probiotics",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "chana_dal_vada",
+    "name": "Andhra Masala Vada",
+    "description": "Crunchy golden chana dal fritters packed with chopped onions, fresh ginger, mint, and fennel notes.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "andhra_telangana",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "snack"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b001_bengal_gram_dal",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t005_groundnut_oil",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak chana dal in water for 2 hours; reserve 2 tablespoons of whole dal and drain the rest.",
+      "Coarsely grind the drained dal with cumin, green chillies, and ginger without adding water.",
+      "Mix in the reserved whole dal, finely diced onions, chopped curry leaves, and salt.",
+      "Shape small portions of dough into flat round patties.",
+      "Shallow-fry or bake in peanut oil on medium flame until deep golden and crunchy."
+    ],
+    "tags": [
+      "protein",
+      "fiber",
+      "iron",
+      "zinc",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "bendakaya_fry",
+    "name": "Andhra Bendakaya Vepudu (Crisp Okra Stir-fry)",
+    "description": "Crispy sliced okra stir-fried with roasted peanuts, crushed garlic, and flavorful Andhra spices.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "andhra_telangana",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "d056_ladies_finger",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "h012_ground_nut",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t005_groundnut_oil",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Wash okra (bendakaya) and dry completely with a clean towel; slice into 1/2-inch rounds.",
+      "Heat peanut oil in a wide pan; roast peanuts until golden, then set aside.",
+      "In the same oil, add mustard seeds, curry leaves, and crushed garlic cloves.",
+      "Add the sliced okra and turmeric; saut\u00e9 uncovered on medium heat for 12 minutes until crisp and non-slimy.",
+      "Toss in the roasted peanuts and salt just before turning off heat."
+    ],
+    "tags": [
+      "fiber",
+      "zinc",
+      "magnesium",
+      "healthy_fats",
+      "ovulatory_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
   },
   {
     "id": "palak_moong_dal",
@@ -26,44 +2002,76 @@
     "region": "india",
     "country": "IN",
     "cuisine": "north_indian",
-    "diet": ["vegetarian", "gluten_free"],
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
     "prep_time_min": 10,
     "cook_time_min": 25,
     "servings": 3,
     "ingredients": [
-      { "food_id": "b010_green_gram_dal", "quantity": 120, "unit": "g" },
-      { "food_id": "c033_spinach", "quantity": 150, "unit": "g" },
-      { "food_id": "d075_tomato_ripe_hybrid", "quantity": 80, "unit": "g" },
-      { "food_id": "g017_onion_big", "quantity": 60, "unit": "g" },
-      { "food_id": "g011_garlic_big_cloves", "quantity": 10, "unit": "g" },
-      { "food_id": "g014_ginger_fresh", "quantity": 10, "unit": "g" },
-      { "food_id": "g033_turmeric_powder", "quantity": 5, "unit": "g" },
-      { "food_id": "t013_ghee", "quantity": 10, "unit": "g" }
+      {
+        "food_id": "b010_green_gram_dal",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 10,
+        "unit": "g"
+      }
     ],
-    "tags": ["iron", "folate", "protein", "menstrual_phase", "follicular_phase"],
-    "source_ids": ["source-canonical-recipes"]
-  },
-  {
-    "id": "cheera_thoran",
-    "name": "Kerala Cheera Thoran (Amaranth Coconut Stir-fry)",
-    "description": "Traditional Kerala red amaranth greens sautéed with freshly grated coconut, shallots, and virgin coconut oil.",
-    "region": "india",
-    "country": "IN",
-    "cuisine": "kerala",
-    "diet": ["vegetarian", "vegan", "gluten_free"],
-    "prep_time_min": 10,
-    "cook_time_min": 12,
-    "servings": 3,
-    "ingredients": [
-      { "food_id": "c003_amaranth_leaves_red", "quantity": 200, "unit": "g" },
-      { "food_id": "h007_coconut_kernel_fresh", "quantity": 40, "unit": "g" },
-      { "food_id": "g017_onion_big", "quantity": 40, "unit": "g" },
-      { "food_id": "g011_garlic_big_cloves", "quantity": 5, "unit": "g" },
-      { "food_id": "g033_turmeric_powder", "quantity": 3, "unit": "g" },
-      { "food_id": "t001_coconut_oil", "quantity": 10, "unit": "g" }
+    "instructions": [
+      "Rinse yellow moong dal and cook with water, salt, and turmeric in a pressure cooker until soft.",
+      "Wash and finely chop fresh spinach leaves.",
+      "Heat ghee in a pan, saut\u00e9 cumin, diced onions, ginger, garlic, and chopped tomatoes until oil releases.",
+      "Add chopped spinach and cook for 3-4 minutes until wilted.",
+      "Pour in the cooked moong dal, adjust consistency with water, and simmer for 5 minutes."
     ],
-    "tags": ["iron", "calcium", "potassium", "menstrual_phase", "kerala_cuisine"],
-    "source_ids": ["source-canonical-recipes"]
+    "tags": [
+      "iron",
+      "folate",
+      "protein",
+      "menstrual_phase",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
   },
   {
     "id": "methi_paratha",
@@ -72,18 +2080,58 @@
     "region": "india",
     "country": "IN",
     "cuisine": "punjabi",
-    "diet": ["vegetarian"],
+    "diet": [
+      "vegetarian"
+    ],
+    "meal_type": [
+      "breakfast"
+    ],
     "prep_time_min": 15,
     "cook_time_min": 15,
     "servings": 4,
     "ingredients": [
-      { "food_id": "a019_wheat_flour_atta", "quantity": 180, "unit": "g" },
-      { "food_id": "c020_fenugreek_leaves", "quantity": 100, "unit": "g" },
-      { "food_id": "g033_turmeric_powder", "quantity": 3, "unit": "g" },
-      { "food_id": "t013_ghee", "quantity": 15, "unit": "g" }
+      {
+        "food_id": "a019_wheat_flour_atta",
+        "quantity": 180,
+        "unit": "g"
+      },
+      {
+        "food_id": "c020_fenugreek_leaves",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 15,
+        "unit": "g"
+      }
     ],
-    "tags": ["calcium", "fiber", "complex_carbs", "luteal_phase"],
-    "source_ids": ["source-canonical-recipes"]
+    "instructions": [
+      "Pluck, wash, and finely chop fresh fenugreek (methi) leaves.",
+      "In a large bowl, mix whole wheat flour (atta), chopped methi, cumin, turmeric, salt, and a tsp of ghee.",
+      "Add warm water gradually and knead into a smooth, non-sticky dough. Rest for 10 minutes.",
+      "Divide into balls and roll out into thin round parathas.",
+      "Cook on a hot tawa with a dab of desi ghee on both sides until golden speckles appear."
+    ],
+    "tags": [
+      "calcium",
+      "fiber",
+      "complex_carbs",
+      "luteal_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
   },
   {
     "id": "chickpea_spinach_curry",
@@ -92,104 +2140,78 @@
     "region": "india",
     "country": "IN",
     "cuisine": "north_indian",
-    "diet": ["vegetarian", "vegan", "gluten_free"],
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
     "prep_time_min": 15,
     "cook_time_min": 30,
     "servings": 4,
     "ingredients": [
-      { "food_id": "b002_bengal_gram_whole", "quantity": 180, "unit": "g" },
-      { "food_id": "c033_spinach", "quantity": 150, "unit": "g" },
-      { "food_id": "g017_onion_big", "quantity": 80, "unit": "g" },
-      { "food_id": "d075_tomato_ripe_hybrid", "quantity": 100, "unit": "g" },
-      { "food_id": "g014_ginger_fresh", "quantity": 10, "unit": "g" },
-      { "food_id": "g011_garlic_big_cloves", "quantity": 10, "unit": "g" },
-      { "food_id": "g033_turmeric_powder", "quantity": 5, "unit": "g" },
-      { "food_id": "t001_coconut_oil", "quantity": 15, "unit": "g" }
+      {
+        "food_id": "b002_bengal_gram_whole",
+        "quantity": 180,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 15,
+        "unit": "g"
+      }
     ],
-    "tags": ["iron", "folate", "protein", "zinc", "menstrual_phase", "follicular_phase"],
-    "source_ids": ["source-canonical-recipes"]
-  },
-  {
-    "id": "overnight_chia_oats",
-    "name": "Overnight Chia & Berry Oats",
-    "description": "Rolled oats and chia seeds soaked in protein-rich yogurt, topped with soaked almonds.",
-    "region": "global",
-    "country": "GLOBAL",
-    "cuisine": "continental",
-    "diet": ["vegetarian", "gluten_free"],
-    "prep_time_min": 10,
-    "cook_time_min": 0,
-    "servings": 2,
-    "ingredients": [
-      { "food_id": "global_rolled_oats", "quantity": 80, "unit": "g" },
-      { "food_id": "global_chia_seeds", "quantity": 20, "unit": "g" },
-      { "food_id": "l005_curd_dahi", "quantity": 150, "unit": "g" },
-      { "food_id": "h001_almond", "quantity": 25, "unit": "g" }
+    "instructions": [
+      "Soak chickpeas overnight and pressure cook with salt until completely soft.",
+      "Blanch spinach leaves in boiling water for 2 minutes, shock in cold water, and blend into a bright green pur\u00e9e.",
+      "Heat oil in a pan; saut\u00e9 cumin, diced onions, ginger, and garlic until caramelized.",
+      "Add pur\u00e9ed tomatoes and spices; cook until oil separates.",
+      "Add the cooked chickpeas and spinach pur\u00e9e; simmer for 8-10 minutes to blend flavors."
     ],
-    "tags": ["omega_3", "fiber", "calcium", "magnesium", "follicular_phase"],
-    "source_ids": ["source-canonical-recipes"]
-  },
-  {
-    "id": "mediterranean_quinoa_bowl",
-    "name": "Mediterranean Quinoa & Pumpkin Seed Bowl",
-    "description": "Nutty quinoa tossed with baby spinach, sweet cherry tomatoes, red onions, and crunchy pepitas.",
-    "region": "global",
-    "country": "GLOBAL",
-    "cuisine": "mediterranean",
-    "diet": ["vegetarian", "vegan", "gluten_free"],
-    "prep_time_min": 10,
-    "cook_time_min": 15,
-    "servings": 2,
-    "ingredients": [
-      { "food_id": "global_quinoa", "quantity": 100, "unit": "g" },
-      { "food_id": "c033_spinach", "quantity": 60, "unit": "g" },
-      { "food_id": "d075_tomato_ripe_hybrid", "quantity": 80, "unit": "g" },
-      { "food_id": "g017_onion_big", "quantity": 40, "unit": "g" },
-      { "food_id": "global_pumpkin_seeds", "quantity": 25, "unit": "g" }
+    "tags": [
+      "iron",
+      "folate",
+      "protein",
+      "zinc",
+      "menstrual_phase",
+      "follicular_phase"
     ],
-    "tags": ["complete_protein", "magnesium", "zinc", "ovulatory_phase"],
-    "source_ids": ["source-canonical-recipes"]
-  },
-  {
-    "id": "pan_seared_salmon_spinach",
-    "name": "Pan-Seared Wild Salmon on Sautéed Greens",
-    "description": "Tender wild salmon seared golden in garlic-infused oil over tender wilted spinach and ginger.",
-    "region": "global",
-    "country": "GLOBAL",
-    "cuisine": "mediterranean",
-    "diet": ["non_vegetarian", "gluten_free"],
-    "prep_time_min": 10,
-    "cook_time_min": 12,
-    "servings": 2,
-    "ingredients": [
-      { "food_id": "global_wild_salmon", "quantity": 200, "unit": "g" },
-      { "food_id": "c033_spinach", "quantity": 120, "unit": "g" },
-      { "food_id": "g011_garlic_big_cloves", "quantity": 8, "unit": "g" },
-      { "food_id": "g014_ginger_fresh", "quantity": 6, "unit": "g" }
-    ],
-    "tags": ["omega_3", "anti_inflammatory", "vitamin_b12", "menstrual_phase", "cramp_relief"],
-    "source_ids": ["source-canonical-recipes"]
-  },
-  {
-    "id": "sweet_potato_beetroot_hash",
-    "name": "Spiced Sweet Potato & Beetroot Hash",
-    "description": "Steamed cubes of sweet potato and beetroot pan-tossed with ginger, turmeric, and a squeeze of fresh amla juice.",
-    "region": "india",
-    "country": "IN",
-    "cuisine": "south_indian",
-    "diet": ["vegetarian", "vegan", "gluten_free"],
-    "prep_time_min": 10,
-    "cook_time_min": 15,
-    "servings": 2,
-    "ingredients": [
-      { "food_id": "f013_sweet_potato_brown_skin", "quantity": 150, "unit": "g" },
-      { "food_id": "f001_beetroot", "quantity": 100, "unit": "g" },
-      { "food_id": "e021_goosberry", "quantity": 30, "unit": "g" },
-      { "food_id": "g014_ginger_fresh", "quantity": 8, "unit": "g" },
-      { "food_id": "t001_coconut_oil", "quantity": 10, "unit": "g" }
-    ],
-    "tags": ["complex_carbs", "nitrates", "vitamin_c", "luteal_phase", "serotonin_boost"],
-    "source_ids": ["source-canonical-recipes"]
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
   },
   {
     "id": "paneer_pumpkin_seed_bhurji",
@@ -198,19 +2220,1947 @@
     "region": "india",
     "country": "IN",
     "cuisine": "punjabi",
-    "diet": ["vegetarian", "gluten_free"],
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "dinner"
+    ],
     "prep_time_min": 10,
     "cook_time_min": 12,
     "servings": 2,
     "ingredients": [
-      { "food_id": "l003_paneer", "quantity": 150, "unit": "g" },
-      { "food_id": "global_pumpkin_seeds", "quantity": 25, "unit": "g" },
-      { "food_id": "g017_onion_big", "quantity": 60, "unit": "g" },
-      { "food_id": "d075_tomato_ripe_hybrid", "quantity": 60, "unit": "g" },
-      { "food_id": "g033_turmeric_powder", "quantity": 3, "unit": "g" },
-      { "food_id": "t013_ghee", "quantity": 10, "unit": "g" }
+      {
+        "food_id": "l003_paneer",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "global_pumpkin_seeds",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 10,
+        "unit": "g"
+      }
     ],
-    "tags": ["magnesium", "calcium", "protein", "zinc", "luteal_phase", "pms_support"],
-    "source_ids": ["source-canonical-recipes"]
+    "instructions": [
+      "Crumble fresh paneer with your fingers; lightly dry roast pumpkin seeds until aromatic and coarsely crush.",
+      "Heat ghee in a pan, saut\u00e9 diced onions and green chillies until soft and translucent.",
+      "Add chopped tomatoes, turmeric, and salt; cook until tomatoes turn soft.",
+      "Toss in the crumbled paneer and crushed pumpkin seeds; stir on medium heat for 2-3 minutes.",
+      "Garnish with chopped coriander and serve hot with rotis or whole grain toast."
+    ],
+    "tags": [
+      "magnesium",
+      "calcium",
+      "protein",
+      "zinc",
+      "luteal_phase",
+      "pms_support"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "dal_tadka",
+    "name": "Homestyle Yellow Dal Tadka",
+    "description": "Classic comfort food: split pigeon peas (toor dal) cooked soft and finished with a sizzling cumin, garlic, and ghee tadka.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "north_indian",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 25,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b021_red_gram_dal",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Pressure cook toor dal with turmeric, half the ginger, salt, and water for 4 whistles until completely tender.",
+      "Heat ghee in a pan; add cumin seeds and allow them to sizzle.",
+      "Add finely chopped garlic, remaining ginger, and onions; saut\u00e9 until golden brown.",
+      "Add chopped tomatoes and cook until soft and pulpy.",
+      "Pour the cooked dal into the pan, simmer for 5 minutes, garnish with fresh coriander, and serve."
+    ],
+    "tags": [
+      "protein",
+      "iron",
+      "comfort_food",
+      "follicular_phase",
+      "digestible"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "palak_paneer",
+    "name": "Homestyle Palak Paneer",
+    "description": "Succulent cubes of cottage cheese simmered in a velvety pur\u00e9e of fresh spinach spiced with cumin, garlic, and ginger.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "north_indian",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "l003_paneer",
+        "quantity": 160,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Blanch washed spinach in boiling salted water for 2 minutes, shock in ice water, and blend into a smooth puree.",
+      "Heat ghee in a skillet; add cumin seeds, chopped garlic, ginger, and onions. Saut\u00e9 until lightly browned.",
+      "Add chopped tomatoes and salt; cook until soft.",
+      "Pour in the spinach puree and simmer on low heat for 5 minutes.",
+      "Gently fold in paneer cubes, cook for 2 minutes until paneer is soft, and serve warm with roti."
+    ],
+    "tags": [
+      "calcium",
+      "iron",
+      "protein",
+      "magnesium",
+      "menstrual_phase",
+      "luteal_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "punjabi_rajma_masala",
+    "name": "Slow-Simmered Punjabi Rajma",
+    "description": "Tender red kidney beans simmered in a thick, spiced onion-tomato gravy infused with ginger, garlic, and whole spices.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "punjabi",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 35,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "b020_rajmah_red",
+        "quantity": 160,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak red kidney beans (rajma) overnight in water; pressure cook with salt for 20-25 minutes until melt-in-mouth tender.",
+      "Heat ghee in a heavy pot, add cumin seeds, finely diced onions, minced garlic, and ginger; saut\u00e9 until caramelized.",
+      "Add tomato puree and turmeric; cook until oil releases from the sides.",
+      "Add the boiled rajma with its cooking liquid; mash a few spoonfuls against the pot to thicken the gravy.",
+      "Simmer on low heat for 15 minutes, allowing spices to penetrate the beans. Serve hot with steamed rice."
+    ],
+    "tags": [
+      "protein",
+      "iron",
+      "fiber",
+      "potassium",
+      "complex_carbs",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "moong_dal_khichdi",
+    "name": "Comforting Moong Dal Khichdi",
+    "description": "Soothing, easily digestible Ayurvedic staple of yellow moong lentils and rice simmered with ghee, cumin, and ginger.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "north_indian",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "dinner",
+      "lunch"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "a015_rice_raw_milled",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "b010_green_gram_dal",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g031_pepper_black",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Wash raw rice and yellow moong dal together; soak for 15 minutes.",
+      "Heat ghee in a pressure cooker; add cumin seeds, crushed black pepper, and minced ginger.",
+      "Add the drained rice, dal, turmeric powder, and salt; saut\u00e9 gently for 1 minute.",
+      "Add 4.5 cups of water for a comforting, porridge-like consistency.",
+      "Pressure cook for 3-4 whistles; let pressure release naturally, mix with an extra spoon of warm ghee, and serve."
+    ],
+    "tags": [
+      "protein",
+      "digestible",
+      "comfort_food",
+      "gut_health",
+      "menstrual_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "aloo_gobi_matar",
+    "name": "Homestyle Aloo Gobi Matar",
+    "description": "Tender cauliflower florets, potatoes, and green peas saut\u00e9ed with cumin, turmeric, ginger, and fresh coriander.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "north_indian",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "d036_cauliflower",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "f006_potato_brown_skin_big",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "t006_mustard_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Cut cauliflower into florets and potatoes into small cubes.",
+      "Heat mustard oil in a pan until lightly smoking; add cumin seeds and minced ginger.",
+      "Add potato cubes, cauliflower florets, turmeric, and salt; stir well.",
+      "Cover and cook on low heat for 12 minutes, stirring occasionally until potatoes are fork tender.",
+      "Add chopped tomatoes, cook uncovered for 4 minutes until dry and fragrant, and garnish with fresh coriander."
+    ],
+    "tags": [
+      "vitamin_c",
+      "fiber",
+      "potassium",
+      "complex_carbs",
+      "ovulatory_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "kanda_batata_poha",
+    "name": "Kanda Batata Poha",
+    "description": "Flattened rice tempered with turmeric, crunchy roasted peanuts, mustard seeds, diced potatoes, and fresh lime.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "maharashtrian",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "snack"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 12,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "a011_rice_flakes",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "f006_potato_brown_skin_big",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "h012_ground_nut",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g010_curry_leaves",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t005_groundnut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Rinse thick poha (rice flakes) in a colander under running water for 30 seconds; drain and rest for 5 minutes.",
+      "Heat peanut oil in a pan; fry peanuts until crunchy and golden, then set aside.",
+      "In the same oil, splutter mustard seeds, curry leaves, green chillies, and finely diced potatoes. Cook until potatoes soften.",
+      "Add finely chopped onions and turmeric; saut\u00e9 until onions turn translucent.",
+      "Gently fold in the softened poha, salt, and fried peanuts. Steam covered for 2 minutes; finish with fresh lemon juice."
+    ],
+    "tags": [
+      "iron",
+      "vitamin_c",
+      "healthy_fats",
+      "easy_digest",
+      "menstrual_phase",
+      "breakfast"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "methi_thepla",
+    "name": "Gujarati Methi Thepla",
+    "description": "Soft spiced flatbreads made with whole wheat, gram flour, fresh fenugreek leaves, sesame seeds, and yogurt.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "gujarati",
+    "diet": [
+      "vegetarian"
+    ],
+    "meal_type": [
+      "breakfast",
+      "snack"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 15,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "a019_wheat_flour_atta",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "b001_bengal_gram_dal",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "c020_fenugreek_leaves",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "l005_curd_dahi",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "h011_gingelly_seeds_white",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t005_groundnut_oil",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Finely chop washed fenugreek leaves; mix with whole wheat flour, besan (chana flour), white sesame seeds, and spices.",
+      "Add yogurt, 1 tsp oil, and warm water; knead into a very soft, pliable dough.",
+      "Roll into very thin round discs using dry flour dusting.",
+      "Cook on a hot tawa with a light brush of oil on both sides until soft golden spots appear.",
+      "Stack wrapped in a clean cloth to retain softness; perfect for travel and daily nourishment."
+    ],
+    "tags": [
+      "calcium",
+      "iron",
+      "fiber",
+      "complex_carbs",
+      "luteal_phase",
+      "gujarati_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "gujarati_khatti_meethi_dal",
+    "name": "Gujarati Khatti Meethi Dal",
+    "description": "Harmonious toor dal with a balance of sweet, spicy, and tangy flavors, simmered with peanuts, ginger, and mustard.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "gujarati",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 20,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b021_red_gram_dal",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "h012_ground_nut",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "e064_tamarind_pulp",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Pressure cook toor dal with peanuts, chopped tomatoes, turmeric, and 2.5 cups of water until soft; blend with hand whisk.",
+      "Stir in tamarind extract, grated ginger, and salt; bring to a simmer.",
+      "Heat ghee in a tadka ladle, splutter mustard seeds and cumin seeds.",
+      "Pour the tempering into the simmering dal.",
+      "Simmer gently for 8-10 minutes until aromatic and silky."
+    ],
+    "tags": [
+      "protein",
+      "healthy_fats",
+      "zinc",
+      "follicular_phase",
+      "gujarati_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "matki_usal",
+    "name": "Maharashtrian Sprouted Moong Usal",
+    "description": "Vibrant sprouted green moong stir-fried with mustard, curry leaves, onions, turmeric, and fresh coconut.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "maharashtrian",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "lunch"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b011_green_gram_whole",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t005_groundnut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Steam sprouted whole green moong for 5 minutes so they remain slightly crisp.",
+      "Heat peanut oil in a kadai; splutter mustard seeds and curry leaves.",
+      "Add finely chopped onions, ginger, and garlic; saut\u00e9 until translucent.",
+      "Add tomatoes, turmeric, and salt; cook until tomatoes break down.",
+      "Add the steamed sprouted moong, toss for 3 minutes, and garnish with freshly grated coconut."
+    ],
+    "tags": [
+      "protein",
+      "b_vitamins",
+      "enzymes",
+      "fiber",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "bhindi_masala_gujarati",
+    "name": "Gujarati Sambhariya Bhindi",
+    "description": "Tender okra slit and pan-roasted with a savory stuffing of roasted peanuts, sesame seeds, coriander, and turmeric.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "gujarati",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "d056_ladies_finger",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "h012_ground_nut",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "h011_gingelly_seeds_white",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "food_id": "g024_coriander_seeds",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "t005_groundnut_oil",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Wipe dry and trim okra; make a lengthwise slit without cutting all the way through.",
+      "Coarsely grind roasted peanuts, sesame seeds, coriander seeds, turmeric, and salt to make the masala stuffing.",
+      "Stuff the prepared masala into the slit okra.",
+      "Heat peanut oil in a wide pan; place stuffed okra in a single layer.",
+      "Cook covered on low heat for 10-12 minutes, turning gently halfway until tender and crisp; finish with lemon juice."
+    ],
+    "tags": [
+      "calcium",
+      "zinc",
+      "fiber",
+      "healthy_fats",
+      "ovulatory_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "zesty_kachumber_salad",
+    "name": "Maharashtrian Koshimbir / Kachumber Salad",
+    "description": "Crisp diced cucumbers and tomatoes dressed with crushed roasted peanuts, fresh coriander, green chilli, and lemon juice.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "maharashtrian",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "snack",
+      "lunch"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 0,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "d043_cucumber_green_elongate",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "h012_ground_nut",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Finely dice fresh cucumbers, ripe tomatoes, and onions.",
+      "Coarsely crush roasted peanuts using a rolling pin or mortar.",
+      "In a salad bowl, toss together the vegetables, crushed peanuts, and finely chopped coriander.",
+      "Drizzle fresh lemon juice and season with a pinch of salt.",
+      "Toss immediately before serving to maintain maximum crunch."
+    ],
+    "tags": [
+      "hydration",
+      "vitamin_c",
+      "zinc",
+      "healthy_fats",
+      "ovulatory_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "roasted_peanut_potato_toss",
+    "name": "Upwas Style Spiced Potato & Peanut Toss",
+    "description": "Boiled potato cubes saut\u00e9ed with roasted crushed peanuts, cumin seeds, green chillies, and lemon.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "maharashtrian",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "snack"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 10,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "f006_potato_brown_skin_big",
+        "quantity": 160,
+        "unit": "g"
+      },
+      {
+        "food_id": "h012_ground_nut",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Boil potatoes until tender, peel, and cut into bite-sized cubes.",
+      "Coarsely crush roasted peanuts.",
+      "Heat ghee in a pan; add cumin seeds and finely chopped green chillies.",
+      "Add the potato cubes, crushed peanuts, and salt; stir-fry on medium flame for 5 minutes until lightly crispy.",
+      "Finish with fresh lemon juice and chopped coriander."
+    ],
+    "tags": [
+      "complex_carbs",
+      "magnesium",
+      "energy",
+      "luteal_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "bengali_chholar_dal",
+    "name": "Bengali Chholar Dal with Coconut",
+    "description": "Fragrant festive Bengal gram (chana dal) flavored with whole spices, ginger, and fried coconut flakes.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "bengali",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "lunch"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 25,
+    "servings": 4,
+    "ingredients": [
+      {
+        "food_id": "b001_bengal_gram_dal",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "h007_coconut_kernel_fresh",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak chana dal for 1 hour; pressure cook with turmeric, salt, and water until cooked but holding its shape.",
+      "Cut coconut into tiny thin slices (kuchi); fry in ghee until golden brown and aromatic, then set aside.",
+      "In the same ghee, temper cumin seeds and freshly grated ginger paste.",
+      "Pour in the cooked dal with its liquid; simmer for 8 minutes to thicken slightly.",
+      "Fold in the fried coconut flakes and an extra drizzle of ghee before serving."
+    ],
+    "tags": [
+      "protein",
+      "iron",
+      "zinc",
+      "follicular_phase",
+      "bengali_cuisine"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "begun_bhaja",
+    "name": "Crispy Bengali Begun Bhaja",
+    "description": "Thick eggplant rounds marinated in turmeric, salt, and mild spices, shallow fried in pure mustard oil.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "bengali",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 10,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "d010_brinjal_1",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "t006_mustard_oil",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Slice eggplant into thick round discs (approx 3/4-inch).",
+      "Rub thoroughly with turmeric powder and salt; let rest for 5 minutes to release excess water.",
+      "Heat mustard oil in a heavy iron skillet until hot.",
+      "Place eggplant rounds in a single layer and shallow fry on medium heat.",
+      "Flip and cook until both sides are deeply golden and the flesh is tender and creamy."
+    ],
+    "tags": [
+      "fiber",
+      "potassium",
+      "antioxidant",
+      "menstrual_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "dimer_dalna",
+    "name": "Bengali Dimer Dalna (Homestyle Egg Curry)",
+    "description": "Hard-boiled eggs and tender potato halves simmered in a light, warming ginger-tomato-garlic curry.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "bengali",
+    "diet": [
+      "non_vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 20,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "m001_egg_poultry_whole_raw",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "f006_potato_brown_skin_big",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t006_mustard_oil",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Boil eggs until hard, peel, and lightly prick with a fork; coat with turmeric and salt.",
+      "Shallow-fry the boiled eggs and halved potato cubes in hot mustard oil until golden; set aside.",
+      "In the remaining oil, temper cumin seeds and saut\u00e9 sliced onions, ginger, and garlic paste.",
+      "Add chopped tomatoes, turmeric, and salt; cook down into a rich masala paste.",
+      "Add 1.5 cups water, the fried eggs, and potatoes. Simmer covered for 10 minutes until potatoes are soft."
+    ],
+    "tags": [
+      "complete_protein",
+      "choline",
+      "vitamin_b12",
+      "iron",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "masoor_dal_bengali",
+    "name": "Simple Bengali Masoor Dal",
+    "description": "Light and comforting red lentil soup gently tempered with cumin, green chillies, and fresh coriander.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "bengali",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b013_lentil_dal",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "t006_mustard_oil",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Wash red masoor dal and boil with water, turmeric, and slit green chillies until soft.",
+      "Whisk the dal into a smooth, light soup consistency.",
+      "Heat mustard oil in a tadka pan; add cumin seeds and sliced onions. Saut\u00e9 until onions are golden.",
+      "Pour the tadka into the bubbling dal.",
+      "Simmer for 2 minutes, finish with fresh coriander leaves, and serve with steamed rice."
+    ],
+    "tags": [
+      "protein",
+      "iron",
+      "folate",
+      "easy_digest",
+      "menstrual_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "aloo_til_posto",
+    "name": "Bengali Aloo Til Posto Style",
+    "description": "Tender potato cubes simmered in a fragrant white sesame and green chilli paste cooked in pungent mustard oil.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "bengali",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "f006_potato_brown_skin_big",
+        "quantity": 180,
+        "unit": "g"
+      },
+      {
+        "food_id": "h011_gingelly_seeds_white",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 5,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "t006_mustard_oil",
+        "quantity": 12,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak white sesame seeds (til) in warm water for 15 minutes; grind with green chillies and salt into a smooth thick paste.",
+      "Dice potatoes into cubes.",
+      "Heat mustard oil in a kadai, add potato cubes and turmeric; saut\u00e9 for 3-4 minutes.",
+      "Add half a cup of water, cover, and cook on low flame until potatoes are fork tender.",
+      "Stir in the sesame paste and 1 tsp raw mustard oil. Cook for 2 minutes and remove from heat."
+    ],
+    "tags": [
+      "calcium",
+      "zinc",
+      "healthy_fats",
+      "magnesium",
+      "luteal_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "shorshe_machh",
+    "name": "Bengali Shorshe Machh (Mustard Fish Curry)",
+    "description": "Tender freshwater fish simmered in an invigorating mustard and green chilli emulsion with virgin mustard oil.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "bengali",
+    "diet": [
+      "non_vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 15,
+    "cook_time_min": 15,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "p003_anchovy",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "h013_mustard_seeds",
+        "quantity": 15,
+        "unit": "g"
+      },
+      {
+        "food_id": "g001_chillies_green_1",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "g033_turmeric_powder",
+        "quantity": 3,
+        "unit": "g"
+      },
+      {
+        "food_id": "t006_mustard_oil",
+        "quantity": 15,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Soak mustard seeds in warm water with a pinch of salt; grind with green chillies into a smooth paste.",
+      "Marinate cleaned fish with turmeric and salt; lightly sear in hot mustard oil for 1 minute per side.",
+      "Strain the mustard paste with 1 cup of water into the pan.",
+      "Bring to a gentle simmer on low heat; add slit green chillies and salt.",
+      "Simmer for 6-8 minutes until fish is cooked through; finish with a drizzle of raw mustard oil."
+    ],
+    "tags": [
+      "omega_3",
+      "protein",
+      "vitamin_b12",
+      "anti_inflammatory",
+      "menstrual_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "overnight_chia_oats",
+    "name": "Overnight Chia & Berry Oats",
+    "description": "Rolled oats and chia seeds soaked in protein-rich yogurt, topped with soaked almonds.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "continental",
+    "diet": [
+      "vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 0,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "global_rolled_oats",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "global_chia_seeds",
+        "quantity": 20,
+        "unit": "g"
+      },
+      {
+        "food_id": "l005_curd_dahi",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "h001_almond",
+        "quantity": 25,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "In a clean glass jar, combine rolled oats, chia seeds, and fresh whisked yogurt.",
+      "Add 50ml water or milk to adjust consistency and stir thoroughly.",
+      "Seal the jar and refrigerate overnight (or at least 4 hours) for chia and oats to soften.",
+      "Roughly chop soaked almonds.",
+      "Top the soaked oats with almonds and enjoy cold."
+    ],
+    "tags": [
+      "omega_3",
+      "fiber",
+      "calcium",
+      "magnesium",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "mediterranean_quinoa_bowl",
+    "name": "Mediterranean Quinoa & Pumpkin Seed Bowl",
+    "description": "Nutty quinoa tossed with baby spinach, sweet cherry tomatoes, red onions, and crunchy pepitas.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "mediterranean",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "global_quinoa",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "global_pumpkin_seeds",
+        "quantity": 25,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Rinse quinoa under cold running water; cook in 200ml boiling water with salt for 15 minutes until fluffy.",
+      "Let quinoa cool to room temperature.",
+      "Dice tomatoes and thinly slice red onions; wash baby spinach.",
+      "In a salad bowl, toss cooked quinoa with spinach, tomatoes, and onions.",
+      "Dress with fresh lemon juice and top with crunchy toasted pumpkin seeds."
+    ],
+    "tags": [
+      "complete_protein",
+      "magnesium",
+      "zinc",
+      "ovulatory_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "pan_seared_salmon_spinach",
+    "name": "Pan-Seared Wild Salmon on Saut\u00e9ed Greens",
+    "description": "Tender wild salmon seared golden in garlic-infused oil over tender wilted spinach and ginger.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "mediterranean",
+    "diet": [
+      "non_vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 12,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "global_wild_salmon",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 6,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Pat wild salmon fillets dry with paper towels; season with salt and fresh black pepper.",
+      "Heat a skillet on medium-high; sear salmon skin-side down for 4-5 minutes until crisp.",
+      "Flip and sear the other side for 3-4 minutes until cooked through; remove from pan.",
+      "In the same skillet, add minced garlic, ginger, and washed spinach; saut\u00e9 for 2 minutes until wilted.",
+      "Plate the saut\u00e9ed spinach, rest the salmon fillet on top, and squeeze fresh lemon juice."
+    ],
+    "tags": [
+      "omega_3",
+      "anti_inflammatory",
+      "vitamin_b12",
+      "menstrual_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "sweet_potato_beetroot_hash",
+    "name": "Spiced Sweet Potato & Beetroot Hash",
+    "description": "Steamed cubes of sweet potato and beetroot pan-tossed with ginger, turmeric, and fresh lemon juice.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "south_indian",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "lunch"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "f013_sweet_potato_brown_skin",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "f001_beetroot",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "g014_ginger_fresh",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Peel sweet potato and beetroot; cut into uniform 1/2-inch cubes.",
+      "Steam cubes for 8-10 minutes until tender but firm.",
+      "Heat coconut oil in a pan, add minced ginger, and saut\u00e9 for 1 minute.",
+      "Add the steamed root vegetables and toss on medium-high heat until slightly caramelized.",
+      "Season with salt, remove from heat, and drizzle with fresh lemon juice."
+    ],
+    "tags": [
+      "complex_carbs",
+      "potassium",
+      "vitamin_c",
+      "luteal_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "classic_shakshuka",
+    "name": "Mediterranean Shakshuka (Poached Eggs in Tomato Pepper Sauce)",
+    "description": "Eggs gently poached in a simmering, smoky reduction of ripe tomatoes, sweet bell peppers, onions, garlic, and cumin.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "mediterranean",
+    "diet": [
+      "non_vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast",
+      "dinner"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 18,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "m001_egg_poultry_whole_raw",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "food_id": "d033_capsicum_green",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 60,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 10,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Heat oil in a heavy skillet; saut\u00e9 cumin seeds, diced onions, bell peppers, and minced garlic until softened.",
+      "Add chopped tomatoes, paprika, and salt; simmer on medium heat for 10 minutes until sauce is thick and saucy.",
+      "Use a spoon to create small wells in the tomato sauce.",
+      "Crack the fresh eggs directly into the wells.",
+      "Cover the skillet and simmer on low heat for 5-7 minutes until egg whites are set but yolks remain runny; garnish with coriander."
+    ],
+    "tags": [
+      "protein",
+      "choline",
+      "vitamin_c",
+      "antioxidant",
+      "follicular_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "greek_chickpea_salad",
+    "name": "Mediterranean Chickpea & Cucumber Salad",
+    "description": "Crisp cucumbers, juicy tomatoes, and hearty chickpeas tossed with fresh lemon juice and aromatic herbs.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "mediterranean",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "lunch",
+      "snack"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 0,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "b002_bengal_gram_whole",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "d043_cucumber_green_elongate",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 40,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 12,
+        "unit": "g"
+      },
+      {
+        "food_id": "g009_coriander_leaves",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Use pre-boiled or sprouted chickpeas (kala chana or kabuli chana); drain well.",
+      "Dice cucumbers, tomatoes, and red onions into uniform small cubes.",
+      "In a salad bowl, toss the chickpeas with the diced vegetables.",
+      "Dress with freshly squeezed lemon juice, salt, and black pepper.",
+      "Garnish with chopped fresh coriander or parsley and serve chilled."
+    ],
+    "tags": [
+      "protein",
+      "fiber",
+      "potassium",
+      "vitamin_c",
+      "ovulatory_phase"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "lentil_spinach_soup",
+    "name": "Mediterranean Lemon Lentil & Spinach Soup",
+    "description": "Hearty whole brown lentils simmered with baby spinach, tomatoes, garlic, and finished with a bright splash of fresh lemon.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "mediterranean",
+    "diet": [
+      "vegetarian",
+      "vegan",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "dinner",
+      "lunch"
+    ],
+    "prep_time_min": 10,
+    "cook_time_min": 25,
+    "servings": 3,
+    "ingredients": [
+      {
+        "food_id": "b013_lentil_dal",
+        "quantity": 120,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "g011_garlic_big_cloves",
+        "quantity": 8,
+        "unit": "g"
+      },
+      {
+        "food_id": "g025_cumin_seeds",
+        "quantity": 4,
+        "unit": "g"
+      },
+      {
+        "food_id": "e033_lemon_juice",
+        "quantity": 12,
+        "unit": "g"
+      },
+      {
+        "food_id": "t001_coconut_oil",
+        "quantity": 10,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Heat oil in a soup pot; saut\u00e9 cumin, diced onions, and minced garlic until aromatic.",
+      "Add rinsed lentils, chopped tomatoes, salt, and 3.5 cups of water.",
+      "Simmer covered for 20 minutes until lentils are soft and tender.",
+      "Stir in the chopped fresh spinach and simmer for an additional 3 minutes.",
+      "Turn off heat, stir in fresh lemon juice, adjust seasoning, and serve with crusty bread."
+    ],
+    "tags": [
+      "iron",
+      "folate",
+      "protein",
+      "vitamin_c",
+      "menstrual_phase",
+      "comfort_food"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
+  },
+  {
+    "id": "egg_spinach_scramble",
+    "name": "Protein-Packed Egg & Baby Spinach Morning Scramble",
+    "description": "Soft-scrambled farm fresh eggs folded with saut\u00e9ed tender spinach, sweet tomatoes, and a crack of black pepper.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "continental",
+    "diet": [
+      "non_vegetarian",
+      "gluten_free"
+    ],
+    "meal_type": [
+      "breakfast"
+    ],
+    "prep_time_min": 5,
+    "cook_time_min": 7,
+    "servings": 2,
+    "ingredients": [
+      {
+        "food_id": "m001_egg_poultry_whole_raw",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "food_id": "c033_spinach",
+        "quantity": 80,
+        "unit": "g"
+      },
+      {
+        "food_id": "d075_tomato_ripe_hybrid",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "food_id": "g017_onion_big",
+        "quantity": 30,
+        "unit": "g"
+      },
+      {
+        "food_id": "g031_pepper_black",
+        "quantity": 2,
+        "unit": "g"
+      },
+      {
+        "food_id": "t013_ghee",
+        "quantity": 8,
+        "unit": "g"
+      }
+    ],
+    "instructions": [
+      "Whisk eggs with salt and freshly cracked black pepper in a small bowl.",
+      "Heat ghee in a non-stick skillet; saut\u00e9 diced onions and tomatoes for 2 minutes.",
+      "Add chopped spinach leaves and saut\u00e9 until wilted (approx 1 minute).",
+      "Lower heat to medium-low, pour in the whisked eggs, and gently sweep across the pan with a spatula.",
+      "Remove from heat while eggs are still soft and creamy. Serve immediately."
+    ],
+    "tags": [
+      "complete_protein",
+      "choline",
+      "iron",
+      "follicular_phase",
+      "quick_breakfast"
+    ],
+    "source_ids": [
+      "source-canonical-recipes"
+    ]
   }
 ]

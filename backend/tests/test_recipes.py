@@ -17,6 +17,25 @@ def test_get_recipe_detail():
     assert recipe["id"] == "ragi_dosa"
     assert len(recipe["ingredients"]) >= 2
     assert any("ragi" in ing["food_id"] for ing in recipe["ingredients"])
+    assert "instructions" in recipe
+    assert isinstance(recipe["instructions"], list)
+    assert len(recipe["instructions"]) >= 3
+    assert "meal_type" in recipe
+    assert "breakfast" in recipe["meal_type"]
+
+def test_filter_recipes_by_meal_type():
+    response = client.get("/api/v1/recipes?meal_type=breakfast")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["total"] >= 5
+    assert all("breakfast" in r["meal_type"] for r in data["items"])
+
+def test_regional_cuisines():
+    for cuisine in ["kerala", "tamil_nadu", "karnataka", "andhra_telangana", "maharashtrian", "gujarati", "bengali", "mediterranean"]:
+        response = client.get(f"/api/v1/recipes?cuisine={cuisine}")
+        assert response.status_code == 200
+        data = response.json()
+        assert data["total"] >= 1, f"Expected recipes for cuisine: {cuisine}"
 
 def test_recipe_ranking():
     # User has ragi, urad_dal, rice, and coconut_oil at home

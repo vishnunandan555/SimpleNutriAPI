@@ -34,11 +34,12 @@ def seed_database(force_reseed=False):
     # 2. Check if already seeded with full dataset
     with SessionLocal() as db:
         food_count = db.scalar(select(func.count(Food.id))) or 0
-        if food_count >= 500 and not force_reseed:
-            print(f"  ℹ️ Database already contains full dataset ({food_count} foods). Skipping seed population.")
+        recipe_count = db.scalar(select(func.count(Recipe.id))) or 0
+        if food_count >= 500 and recipe_count >= 50 and not force_reseed:
+            print(f"  ℹ️ Database already contains full dataset ({food_count} foods, {recipe_count} recipes). Skipping seed population.")
             return
 
-        print(f"  🌱 Seeding canonical knowledge base ({food_count} existing -> updating to full 548+ dataset)...")
+        print(f"  🌱 Seeding canonical knowledge base ({food_count} foods, {recipe_count} recipes -> updating to full dataset)...")
 
         # Clear existing data if partial or forced
         if food_count > 0:
@@ -191,6 +192,8 @@ def seed_database(force_reseed=False):
                 cook_time_min=r.get("cook_time_min"),
                 servings=r.get("servings", 2),
                 tags_json=json.dumps(r.get("tags", [])),
+                meal_type_json=json.dumps(r.get("meal_type", [])),
+                instructions_json=json.dumps(r.get("instructions", [])),
                 source_ids_json=json.dumps(r.get("source_ids", []))
             )
             db.add(recipe_obj)

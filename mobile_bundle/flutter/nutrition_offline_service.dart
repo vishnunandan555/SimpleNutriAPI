@@ -85,6 +85,11 @@ class RecipeItem {
   final String? description;
   final String? cuisine;
   final List<String> tags;
+  final List<String> mealType;
+  final List<String> instructions;
+  final int? prepTimeMin;
+  final int? cookTimeMin;
+  final int? servings;
   final List<RecipeIngredientItem> ingredients;
 
   RecipeItem({
@@ -93,6 +98,11 @@ class RecipeItem {
     this.description,
     this.cuisine,
     required this.tags,
+    this.mealType = const [],
+    this.instructions = const [],
+    this.prepTimeMin,
+    this.cookTimeMin,
+    this.servings,
     required this.ingredients,
   });
 }
@@ -191,7 +201,7 @@ class NutritionOfflineService {
         estimatedCycleDay: cycleDay,
         phaseId: "menstrual",
         phaseName: "Menstrual Phase",
-        description: "Replenish iron losses and ease muscle cramping with magnesium and vitamin C.",
+        description: "Support overall nutritional adequacy with dietary iron, vitamin C, and magnesium for muscle comfort.",
         priorityNutrientNames: ["Iron", "Vitamin C", "Magnesium"],
         targetTags: ["iron", "vitamin_c", "magnesium", "anti_inflammatory"],
       );
@@ -200,7 +210,7 @@ class NutritionOfflineService {
         estimatedCycleDay: cycleDay,
         phaseId: "follicular",
         phaseName: "Follicular Phase",
-        description: "Support rising estrogen, follicle growth, and stamina with clean protein and B-vitamins.",
+        description: "Support general vitality and cellular energy with clean protein, B-vitamins, and zinc.",
         priorityNutrientNames: ["Protein", "Folate (B9)", "Zinc"],
         targetTags: ["protein", "folate", "zinc"],
       );
@@ -209,7 +219,7 @@ class NutritionOfflineService {
         estimatedCycleDay: cycleDay,
         phaseId: "ovulatory",
         phaseName: "Ovulatory Phase",
-        description: "Promote healthy estrogen clearance and cellular health with soluble fiber and antioxidants.",
+        description: "Prioritize nutrient-dense whole foods, dietary fiber, and adequate hydration.",
         priorityNutrientNames: ["Dietary Fiber", "Zinc", "Potassium"],
         targetTags: ["fiber", "zinc", "antioxidant"],
       );
@@ -218,7 +228,7 @@ class NutritionOfflineService {
         estimatedCycleDay: cycleDay,
         phaseId: "luteal",
         phaseName: "Luteal Phase",
-        description: "Support progesterone synthesis and mood balance with magnesium, calcium, and complex carbs.",
+        description: "Support steady energy and mood balance with magnesium, calcium, and complex carbs.",
         priorityNutrientNames: ["Magnesium", "Calcium", "Vitamin B6", "Complex Carbs"],
         targetTags: ["magnesium", "calcium", "vitamin_b6", "complex_carbs", "pms_support"],
       );
@@ -251,11 +261,21 @@ class NutritionOfflineService {
       final missing = ings.where((i) => !availableSet.contains(i.foodId.toLowerCase())).toList();
       final matchPct = (matched.length / (ings.isEmpty ? 1 : ings.length)) * 100;
 
-      // Tag bonus
+      // Parse tags, meal_type, instructions
       List<String> tags = [];
+      List<String> mealType = [];
+      List<String> instructions = [];
       try {
         final decoded = jsonDecode(r['tags_json'].toString());
         if (decoded is List) tags = decoded.map((e) => e.toString().toLowerCase()).toList();
+      } catch (_) {}
+      try {
+        final decoded = jsonDecode(r['meal_type_json'].toString());
+        if (decoded is List) mealType = decoded.map((e) => e.toString().toLowerCase()).toList();
+      } catch (_) {}
+      try {
+        final decoded = jsonDecode(r['instructions_json'].toString());
+        if (decoded is List) instructions = decoded.map((e) => e.toString()).toList();
       } catch (_) {}
 
       final overlap = tags.where((t) => targetTagSet.contains(t)).length;
@@ -265,6 +285,8 @@ class NutritionOfflineService {
         'recipe_id': rid,
         'recipe_name': r['name'],
         'cuisine': r['cuisine'],
+        'meal_type': mealType,
+        'instructions': instructions,
         'match_percentage': matchPct.roundToDouble(),
         'matched_count': matched.length,
         'missing_ingredients': missing.map((m) => {'food_id': m.foodId, 'quantity': m.quantity, 'unit': m.unit}).toList(),

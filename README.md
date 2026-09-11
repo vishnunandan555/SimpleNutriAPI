@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-green.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Render](https://img.shields.io/badge/Deploy%20to-Render-46E3B7.svg?logo=render)](https://render.com)
 
-A production-grade, authoritative Nutrition Knowledge Base and REST API designed for deployment on **Render**, backed by official Indian food composition data (**ICMR-NIN IFCT 2017**) and global staples (**USDA FoodData Central**), evidence-based cycle personalization, and an intelligent kitchen-inventory recipe matcher.
+A production-grade, authoritative Nutrition Knowledge Base and REST API designed for deployment on **Render**, backed by official Indian food composition data (**ICMR-NIN IFCT 2017**) and global staples (**USDA FoodData Central**), supportive cycle-aligned nutritional guidance, and an intelligent kitchen-inventory recipe matcher.
 
 Also includes an **offline mobile bundle (`mobile_bundle/`)** with a pre-compiled SQLite database and Flutter service so Android and iOS apps can operate 100% offline.
 
@@ -164,7 +164,7 @@ curl -s http://localhost:8000/api/v1/version | jq .
   },
   "counts": {
     "foods": 548,
-    "recipes": 10,
+    "recipes": 55,
     "nutrients": 21,
     "food_nutrients": 11265
   },
@@ -506,7 +506,7 @@ SimpleNutri works out of the box with the embedded SQLite database (`nutrition.d
 ## 📱 Offline Mobile Integration (Flutter & Android)
 
 The `mobile_bundle/` directory is isolated from the backend and contains everything required for offline native/mobile apps:
-- `mobile_bundle/nutrition.db`: Clean SQLite database with 548 canonical foods, 10 recipes, 11,265 food-nutrient pairs, and SQLite FTS5 search.
+- `mobile_bundle/nutrition.db`: Clean SQLite database with 548 canonical foods, 55 recipes across 9 cuisines, 11,265 food-nutrient pairs, and SQLite FTS5 search.
 - `mobile_bundle/flutter/nutrition_offline_service.dart`: Ready-to-drop pure Dart service.
 
 ### Quick Flutter Setup:
@@ -559,11 +559,11 @@ The `mobile_bundle/` directory is isolated from the backend and contains everyth
 | **Nutrients** | `GET` | `/api/v1/nutrients` | Master list of 21 tracked nutrients and standard units |
 | | `GET` | `/api/v1/nutrients/{nutrient_id}` | Nutrient metadata and unit definition |
 | | `GET` | `/api/v1/nutrients/{nutrient_id}/top-foods` | Ranked foods richest in a nutrient per 100g edible portion |
-| **Recipes** | `GET` | `/api/v1/recipes` | Filter recipes by `region`, `country`, `cuisine`, `diet`, `tag`, or `ingredient` |
+| **Recipes** | `GET` | `/api/v1/recipes` | Filter recipes by `region`, `country`, `cuisine`, `diet`, `tag`, `ingredient`, or `meal_type` |
 | | `GET` | `/api/v1/recipes/search` | Search recipes by title, description, or ingredients |
-| | `GET` | `/api/v1/recipes/{recipe_id}` | Recipe detail with quantities, units, and instructions |
-| **Recommendations** | `GET` | `/api/v1/cycle/phases` | Evidence-based cycle phases and target nutrients |
-| | `POST` | `/api/v1/cycle/estimate` | Stateless cycle day and phase calculation |
+| | `GET` | `/api/v1/recipes/{recipe_id}` | Recipe detail with quantities, units, and step-by-step instructions |
+| **Recommendations** | `GET` | `/api/v1/cycle/phases` | Supportive cycle phase nutritional priorities and target nutrients |
+| | `POST` | `/api/v1/cycle/estimate` | Stateless cycle day and phase calculation with wellness priorities |
 | | `POST` | `/api/v1/recommendations/foods` | 6-factor weighted food ranking engine (SRS Section 9.4) |
 | | `POST` | `/api/v1/recommendations/recipes` | Kitchen match % + nutrition synergy ranking (SRS Section 10) |
 | | `POST` | `/api/v1/recommendations/shopping-list` | Consolidated deduplicated shopping list (SRS Section 12) |

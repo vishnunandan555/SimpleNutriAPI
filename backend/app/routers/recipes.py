@@ -18,7 +18,8 @@ def list_recipes(
     cuisine: Optional[str] = Query(None, description="Cuisine filter (e.g. south_indian, kerala, north_indian)"),
     diet: Optional[str] = Query(None, description="Diet filter (e.g. vegetarian, vegan, gluten_free)"),
     tag: Optional[str] = Query(None, description="Nutritional or phase tag (e.g. iron, calcium, luteal_phase)"),
-    ingredient: Optional[str] = Query(None, description="Canonical food ID that must be present (e.g. palak, ragi)")
+    ingredient: Optional[str] = Query(None, description="Canonical food ID that must be present (e.g. palak, ragi)"),
+    meal_type: Optional[str] = Query(None, description="Meal type filter (e.g. breakfast, lunch, dinner, snack)")
 ):
     """
     Retrieve recipes with canonical ingredient linkages and optional regional/dietary filters.
@@ -32,7 +33,8 @@ def list_recipes(
         cuisine=cuisine,
         diet=diet,
         tag=tag,
-        ingredient_food_id=ingredient
+        ingredient_food_id=ingredient,
+        meal_type=meal_type
     )
 
     return PaginatedResponse[RecipeSummary](

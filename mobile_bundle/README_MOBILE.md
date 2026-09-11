@@ -9,7 +9,7 @@ This bundle contains everything required to embed the **entire SimpleNutri knowl
 1. **`nutrition.db`**: Pre-compiled, highly-optimized SQLite database containing:
    - Full food records (Indian millets, pulses, greens, vegetables, dairy, spices + global foods).
    - Authoritative nutrient breakdown per 100g (ICMR-NIN IFCT 2017 + USDA).
-   - Curated recipes mapped strictly to canonical food IDs.
+   - 55 curated recipes mapped strictly to canonical food IDs with step-by-step instructions and meal types.
    - Categories, cuisines, diet types, and sources.
    - **SQLite FTS5 virtual table (`foods_fts`)** for instant substring and alias search.
 2. **`flutter/nutrition_offline_service.dart`**: Complete, production-ready Flutter/Dart service that:

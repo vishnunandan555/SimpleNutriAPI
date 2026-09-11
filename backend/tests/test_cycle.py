@@ -45,3 +45,18 @@ def test_estimate_cycle_invalid_length():
     }
     response = client.post("/api/v1/cycle/estimate", json=payload)
     assert response.status_code == 422
+
+def test_cycle_phase_supportive_language():
+    response = client.get("/api/v1/cycle/phases")
+    assert response.status_code == 200
+    phases = response.json()
+    for phase in phases:
+        desc = phase["description"].lower()
+        # Assert non-clinical, supportive wellness phrasing
+        assert "uterine cramping" not in desc
+        assert "evidence-based" not in desc
+        assert "luteal phase syndrome" not in desc
+        nutrients = phase.get("nutrients") or phase.get("priority_nutrients", [])
+        for nutrient in nutrients:
+            role = nutrient["biological_role"].lower()
+            assert "uterine cramping" not in role

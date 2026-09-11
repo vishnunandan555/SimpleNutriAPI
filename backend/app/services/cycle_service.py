@@ -6,134 +6,134 @@ PHASE_CONFIGS = {
         "id": "menstrual",
         "name": "Menstrual Phase",
         "day_range": "Days 1 – 5",
-        "description": "Uterine lining shedding with active micronutrient losses (particularly iron). Prioritize replenishing iron, anti-inflammatory foods, magnesium for muscle relaxation, and vitamin C to enhance iron bioavailability.",
+        "description": "Support overall nutritional adequacy during menses. Focus on dietary sources of iron, vitamin C to assist plant-iron absorption, and magnesium to promote general muscle relaxation and comfort.",
         "nutrients": [
             PhaseNutrientInfo(
                 nutrient_id="iron_mg",
                 nutrient_name="Iron",
-                biological_role="Essential for replenishing hemoglobin losses during menstruation and preventing fatigue.",
+                biological_role="Important for supporting normal red blood cell formation and dietary iron replenishment during menstruation.",
                 top_food_sources=["Cheera (Amaranth)", "Palak (Spinach)", "Bajra", "Ragi", "Moringa", "Chickpeas"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="vitamin_c_mg",
                 nutrient_name="Vitamin C",
-                biological_role="Significantly enhances gastrointestinal absorption of non-heme plant iron by reducing ferric to ferrous iron.",
+                biological_role="Helps enhance dietary absorption of non-heme plant iron when consumed together in meals.",
                 top_food_sources=["Amla", "Papaya", "Moringa Leaves", "Tomatoes", "Citrus"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="magnesium_mg",
                 nutrient_name="Magnesium",
-                biological_role="Acts as a natural neuromuscular relaxant, helping alleviate uterine cramping and smooth muscle contractions.",
+                biological_role="Helps support normal neuromuscular function, muscle relaxation, and physical comfort.",
                 top_food_sources=["Pumpkin Seeds", "Almonds", "Ragi", "Spinach", "Moong Dal"]
             )
         ],
         "tags": ["iron", "vitamin_c", "magnesium", "anti_inflammatory", "menstrual_phase"],
         "dietary_tips": [
-            "Pair iron-rich lentils or greens with vitamin-C sources (e.g. lemon juice on dal or amla) to multiply absorption.",
-            "Incorporate warming spices like ginger and turmeric which contain natural anti-inflammatory compounds.",
-            "Stay well hydrated with warm soups, broths, and tender coconut water."
+            "Pair iron-rich lentils or greens with vitamin C sources (e.g. fresh lemon juice or amla) to support optimal absorption.",
+            "Incorporate gentle warming spices like ginger and turmeric into warm dishes and teas.",
+            "Stay well hydrated with warm soups, broths, and water throughout the day."
         ]
     },
     "follicular": {
         "id": "follicular",
         "name": "Follicular Phase",
         "day_range": "Days 6 – 13",
-        "description": "Estrogen levels rise steadily as follicles mature. Metabolism favors energy utilization and tissue repair. Focus on lean protein, B-vitamins for cellular energy, and zinc for follicular development.",
+        "description": "Support general vitality and cellular energy as activity levels rise. Focus on quality protein, B-vitamins, and zinc for overall daily stamina and metabolic support.",
         "nutrients": [
             PhaseNutrientInfo(
                 nutrient_id="protein_g",
                 nutrient_name="Quality Protein",
-                biological_role="Provides amino acid building blocks for cellular growth, follicular development, and sustained stamina.",
+                biological_role="Provides essential dietary amino acids to support everyday muscle recovery, tissue maintenance, and steady stamina.",
                 top_food_sources=["Moong Dal", "Eggs", "Chickpeas", "Paneer", "Quinoa", "Salmon"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="folate_ug",
                 nutrient_name="Folate & B-Vitamins",
-                biological_role="Crucial for DNA synthesis, rapid cell turnover, and neurotransmitter regulation.",
+                biological_role="Supports normal cellular division, metabolic energy pathways, and general wellbeing.",
                 top_food_sources=["Whole Green Moong", "Chickpeas", "Spinach", "Oats", "Beetroot"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="zinc_mg",
                 nutrient_name="Zinc",
-                biological_role="Supports healthy hormone receptor signaling and enzymatic antioxidant defenses.",
+                biological_role="Supports normal immune function, enzymatic processes, and cellular protection.",
                 top_food_sources=["Pumpkin Seeds", "Sesame Seeds", "Bajra", "Eggs"]
             )
         ],
         "tags": ["protein", "folate", "zinc", "b_vitamins", "follicular_phase"],
         "dietary_tips": [
-            "Incorporate fresh sprouted beans (like green moong) for higher enzyme and bioavailable B-vitamin content.",
-            "Focus on vibrant salads, lightly steamed veggies, and whole ancient grains like oats and foxtail millet.",
-            "Support gut health with probiotic curd/yogurt to assist optimal estrogen metabolism."
+            "Include freshly prepared legumes, sprouts, and whole grains for bioavailable B-vitamins and steady energy.",
+            "Add colorful salads, lightly cooked vegetables, and grains like oats, quinoa, or millets to meals.",
+            "Incorporate probiotic foods like curd or yogurt to support everyday gut health and digestion."
         ]
     },
     "ovulatory": {
         "id": "ovulatory",
         "name": "Ovulatory Phase",
         "day_range": "Days 14 – 16",
-        "description": "Luteinizing Hormone (LH) and estrogen surge to trigger ovulation. Support liver detoxification of excess estrogen and cellular protection with dietary fiber, glutathione precursors, and zinc.",
+        "description": "Prioritize nutrient-rich whole foods, dietary fiber, and adequate hydration to support everyday digestive balance and vitality.",
         "nutrients": [
             PhaseNutrientInfo(
                 nutrient_id="fiber_g",
                 nutrient_name="Dietary Fiber",
-                biological_role="Binds metabolized estrogen in the digestive tract to facilitate healthy excretion and maintain hormonal equilibrium.",
+                biological_role="Promotes healthy gastrointestinal motility, digestive regularity, and overall nutrient balance.",
                 top_food_sources=["Chia Seeds", "Rolled Oats", "Ragi", "Chickpeas", "Kidney Beans"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="zinc_mg",
                 nutrient_name="Zinc",
-                biological_role="Assists follicle rupture and promotes healthy progesterone production from the corpus luteum.",
+                biological_role="Contributes to normal macronutrient metabolism, immune health, and cellular maintenance.",
                 top_food_sources=["Sesame Seeds", "Pumpkin Seeds", "Bajra", "Whole Wheat"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="potassium_mg",
                 nutrient_name="Potassium & Electrolytes",
-                biological_role="Counters fluid retention and supports vascular smooth muscle tone during peak estrogen.",
+                biological_role="Supports normal electrolyte balance, hydration, and vascular tone.",
                 top_food_sources=["Beetroot", "Sweet Potato", "Spinach", "Coconut", "Lentils"]
             )
         ],
         "tags": ["fiber", "zinc", "antioxidant", "potassium", "ovulatory_phase"],
         "dietary_tips": [
-            "Consume cruciferous and sulfur-rich vegetables (garlic, onions, greens) to assist hepatic estrogen processing.",
-            "Add chia or flax seeds to meals to ensure adequate soluble fiber and plant lignans.",
-            "Maintain moderate hydration with antioxidant-rich fruits and herbal infusions."
+            "Incorporate fiber-rich foods like chia seeds, oats, leafy greens, and whole legumes to support smooth digestion.",
+            "Include colorful cruciferous vegetables and onions/garlic as part of balanced, diverse meals.",
+            "Maintain consistent daily fluid intake with water, herbal infusions, and fresh fruits."
         ]
     },
     "luteal": {
         "id": "luteal",
         "name": "Luteal Phase",
         "day_range": "Days 17 – Cycle End",
-        "description": "Progesterone dominates, resting metabolic rate modestly increases, and insulin sensitivity may slightly decrease. Prioritize magnesium, vitamin B6, calcium, and complex carbs to stabilize mood, minimize water retention, and ease PMS.",
+        "description": "Support steady physical comfort, balanced energy, and mood during the premenstrual phase. Emphasize magnesium, vitamin B6, calcium, and unrefined complex carbohydrates.",
         "nutrients": [
             PhaseNutrientInfo(
                 nutrient_id="magnesium_mg",
                 nutrient_name="Magnesium",
-                biological_role="Essential cofactor for neurotransmitter synthesis (GABA, serotonin) and reducing premenstrual tension and fluid retention.",
+                biological_role="Contributes to normal nervous system functioning, psychological wellbeing, and reduction of fatigue.",
                 top_food_sources=["Pumpkin Seeds", "Almonds", "Ragi", "Jowar", "Spinach"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="vitamin_b6_mg",
                 nutrient_name="Vitamin B6 (Pyridoxine)",
-                biological_role="Works synergistically with magnesium to synthesize dopamine and serotonin, modulating premenstrual mood shifts.",
+                biological_role="Contributes to normal energy-yielding metabolism and regulation of hormonal activity.",
                 top_food_sources=["Garlic", "Salmon", "Chickpeas", "Sweet Potato", "Turmeric"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="calcium_mg",
                 nutrient_name="Calcium",
-                biological_role="Clinically shown in dietary trials to diminish physical and emotional symptoms of luteal phase syndrome.",
+                biological_role="Helps support normal neurotransmission, muscle function, and overall daily nutritional adequacy.",
                 top_food_sources=["Sesame Seeds", "Moringa", "Ragi", "Paneer", "Curd"]
             ),
             PhaseNutrientInfo(
                 nutrient_id="carbohydrate_g",
                 nutrient_name="Complex Carbohydrates",
-                biological_role="Provides sustained glucose release to prevent reactive hypoglycemia and carb cravings while supporting serotonin production.",
+                biological_role="Provides steady glucose release from whole grains and roots to maintain consistent daily energy.",
                 top_food_sources=["Sweet Potato", "Whole Wheat", "Rolled Oats", "Bajra", "Jowar"]
             )
         ],
         "tags": ["magnesium", "vitamin_b6", "calcium", "complex_carbs", "luteal_phase", "pms_support"],
         "dietary_tips": [
-            "Choose unrefined whole grains and roots (sweet potato, ragi, jowar) over refined sugars to prevent energy crashes.",
-            "Incorporate a handful of roasted pumpkin seeds and almonds for concentrated magnesium and healthy fats.",
-            "Moderate caffeine and high sodium intake to reduce fluid retention and breast tenderness."
+            "Choose unrefined carbohydrates (such as sweet potatoes, ragi, and oats) over refined sugars for sustained energy.",
+            "Enjoy a handful of roasted pumpkin seeds, nuts, or seeds for healthy fats and natural minerals.",
+            "Stay mindful of excessive caffeine and high-sodium snacks to support comfort and fluid balance."
         ]
     }
 }

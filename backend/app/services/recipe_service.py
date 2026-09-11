@@ -39,6 +39,8 @@ class RecipeService:
             cook_time_min=recipe.cook_time_min,
             servings=recipe.servings,
             tags=recipe.tags,
+            meal_type=recipe.meal_type,
+            instructions=recipe.instructions,
             ingredients=ingredients,
             source_ids=recipe.source_ids
         )
@@ -88,7 +90,8 @@ class RecipeService:
         cuisine: Optional[str] = None,
         diet: Optional[str] = None,
         tag: Optional[str] = None,
-        ingredient_food_id: Optional[str] = None
+        ingredient_food_id: Optional[str] = None,
+        meal_type: Optional[str] = None
     ) -> Tuple[List[RecipeSummary], int, int]:
         stmt = (
             select(Recipe)
@@ -107,6 +110,8 @@ class RecipeService:
             stmt = stmt.where(Recipe.diet_json.like(f'%"{diet}"%'))
         if tag:
             stmt = stmt.where(Recipe.tags_json.like(f'%"{tag}"%'))
+        if meal_type:
+            stmt = stmt.where(Recipe.meal_type_json.like(f'%"{meal_type}"%'))
         if ingredient_food_id:
             resolved_ing = FoodService.resolve_food_id(db, ingredient_food_id) or ingredient_food_id
             stmt = stmt.join(Recipe.ingredients).where(
@@ -127,6 +132,8 @@ class RecipeService:
             count_stmt = count_stmt.where(Recipe.diet_json.like(f'%"{diet}"%'))
         if tag:
             count_stmt = count_stmt.where(Recipe.tags_json.like(f'%"{tag}"%'))
+        if meal_type:
+            count_stmt = count_stmt.where(Recipe.meal_type_json.like(f'%"{meal_type}"%'))
         if ingredient_food_id:
             resolved_ing = FoodService.resolve_food_id(db, ingredient_food_id) or ingredient_food_id
             count_stmt = count_stmt.join(Recipe.ingredients).where(
@@ -212,7 +219,8 @@ class RecipeService:
         target_tags: List[str] = [],
         diet: Optional[str] = None,
         cuisine: Optional[str] = None,
-        region: Optional[str] = None
+        region: Optional[str] = None,
+        meal_type: Optional[str] = None
     ) -> List[RankedRecipe]:
         stmt = (
             select(Recipe)
@@ -227,6 +235,8 @@ class RecipeService:
             stmt = stmt.where(Recipe.cuisine == cuisine)
         if region:
             stmt = stmt.where(Recipe.region == region)
+        if meal_type:
+            stmt = stmt.where(Recipe.meal_type_json.like(f'%"{meal_type}"%'))
 
         recipes = db.scalars(stmt).unique().all()
 

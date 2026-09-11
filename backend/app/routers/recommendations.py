@@ -13,10 +13,10 @@ from backend.app.services.food_service import FoodService
 
 router = APIRouter(prefix="/api/v1", tags=["Cycle & Recommendations"])
 
-@router.get("/cycle/phases", summary="Get All Evidence-Based Cycle Phases")
+@router.get("/cycle/phases", summary="Get Cycle Phase Nutritional Priorities")
 def list_cycle_phases():
     """
-    Retrieve the evidence-based nutritional priorities, biological rationales,
+    Retrieve supportive nutritional priorities, nutrient roles,
     and recommended food groups for all menstrual cycle phases.
     """
     return CycleService.get_all_phases()
@@ -52,7 +52,8 @@ def rank_recipes(
         target_tags=payload.target_tags,
         diet=payload.diet,
         cuisine=payload.cuisine,
-        region=payload.region
+        region=payload.region,
+        meal_type=payload.meal_type
     )
 
 @router.post("/recommendations/foods", response_model=List[FoodRecommendationItem], summary="Rank Foods by Nutrient Relevance & Preferences")

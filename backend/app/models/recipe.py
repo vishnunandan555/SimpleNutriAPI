@@ -20,6 +20,8 @@ class Recipe(Base):
     servings: Mapped[Optional[int]] = mapped_column(Integer, default=2)
     
     tags_json: Mapped[str] = mapped_column(Text, default="[]")
+    meal_type_json: Mapped[str] = mapped_column(Text, default="[]")
+    instructions_json: Mapped[str] = mapped_column(Text, default="[]")
     source_ids_json: Mapped[str] = mapped_column(Text, default="[]")
 
     ingredients: Mapped[List["RecipeIngredient"]] = relationship(
@@ -37,6 +39,20 @@ class Recipe(Base):
     def tags(self) -> list:
         try:
             return json.loads(self.tags_json or "[]")
+        except Exception:
+            return []
+
+    @property
+    def meal_type(self) -> list:
+        try:
+            return json.loads(self.meal_type_json or "[]")
+        except Exception:
+            return []
+
+    @property
+    def instructions(self) -> list:
+        try:
+            return json.loads(self.instructions_json or "[]")
         except Exception:
             return []
 
