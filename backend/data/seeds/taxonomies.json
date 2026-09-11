@@ -1,0 +1,311 @@
+{
+  "categories": [
+    {
+      "id": "cereals_millets",
+      "name": "Cereals & Millets"
+    },
+    {
+      "id": "pulses_legumes",
+      "name": "Pulses & Legumes"
+    },
+    {
+      "id": "leafy_greens",
+      "name": "Green Leafy Vegetables"
+    },
+    {
+      "id": "vegetables",
+      "name": "Vegetables"
+    },
+    {
+      "id": "fruits",
+      "name": "Fruits"
+    },
+    {
+      "id": "roots_tubers",
+      "name": "Roots & Tubers"
+    },
+    {
+      "id": "spices_condiments",
+      "name": "Spices & Condiments"
+    },
+    {
+      "id": "nuts_seeds",
+      "name": "Nuts & Oil Seeds"
+    },
+    {
+      "id": "sugars",
+      "name": "Sugars & Sweeteners"
+    },
+    {
+      "id": "misc",
+      "name": "Miscellaneous Foods"
+    },
+    {
+      "id": "dairy",
+      "name": "Milk & Dairy Products"
+    },
+    {
+      "id": "eggs",
+      "name": "Eggs & Egg Products"
+    },
+    {
+      "id": "poultry",
+      "name": "Poultry"
+    },
+    {
+      "id": "meat",
+      "name": "Meat"
+    },
+    {
+      "id": "fish_seafood",
+      "name": "Fish & Seafood"
+    },
+    {
+      "id": "oils_fats",
+      "name": "Oils & Healthy Fats"
+    }
+  ],
+  "regions": [
+    {
+      "id": "india",
+      "name": "India",
+      "description": "Indian subcontinent regional foods and traditions"
+    },
+    {
+      "id": "global",
+      "name": "Global / International",
+      "description": "Worldwide staples and international cuisines"
+    }
+  ],
+  "countries": [
+    {
+      "id": "IN",
+      "name": "India"
+    },
+    {
+      "id": "US",
+      "name": "United States"
+    },
+    {
+      "id": "GLOBAL",
+      "name": "Global"
+    }
+  ],
+  "cuisines": [
+    {
+      "id": "south_indian",
+      "name": "South Indian",
+      "region_id": "india"
+    },
+    {
+      "id": "kerala",
+      "name": "Kerala",
+      "region_id": "india"
+    },
+    {
+      "id": "tamil_nadu",
+      "name": "Tamil Nadu",
+      "region_id": "india"
+    },
+    {
+      "id": "karnataka",
+      "name": "Karnataka",
+      "region_id": "india"
+    },
+    {
+      "id": "andhra_telangana",
+      "name": "Andhra & Telangana",
+      "region_id": "india"
+    },
+    {
+      "id": "north_indian",
+      "name": "North Indian",
+      "region_id": "india"
+    },
+    {
+      "id": "punjabi",
+      "name": "Punjabi",
+      "region_id": "india"
+    },
+    {
+      "id": "maharashtrian",
+      "name": "Maharashtrian",
+      "region_id": "india"
+    },
+    {
+      "id": "gujarati",
+      "name": "Gujarati",
+      "region_id": "india"
+    },
+    {
+      "id": "bengali",
+      "name": "Bengali",
+      "region_id": "india"
+    },
+    {
+      "id": "mediterranean",
+      "name": "Mediterranean",
+      "region_id": "global"
+    },
+    {
+      "id": "continental",
+      "name": "Continental",
+      "region_id": "global"
+    }
+  ],
+  "diet_types": [
+    {
+      "id": "vegetarian",
+      "name": "Vegetarian",
+      "description": "Plant foods and dairy, no meat or fish"
+    },
+    {
+      "id": "vegan",
+      "name": "Vegan",
+      "description": "Exclusively plant-based foods, no animal products"
+    },
+    {
+      "id": "eggetarian",
+      "name": "Eggetarian",
+      "description": "Vegetarian diet including eggs"
+    },
+    {
+      "id": "non_vegetarian",
+      "name": "Non-Vegetarian",
+      "description": "Includes poultry, meat, or fish"
+    },
+    {
+      "id": "gluten_free",
+      "name": "Gluten-Free",
+      "description": "Naturally free from wheat gluten"
+    }
+  ],
+  "nutrients": [
+    {
+      "id": "energy_kcal",
+      "name": "Energy",
+      "unit": "kcal",
+      "category": "macro"
+    },
+    {
+      "id": "protein_g",
+      "name": "Protein",
+      "unit": "g",
+      "category": "macro"
+    },
+    {
+      "id": "carbohydrate_g",
+      "name": "Total Carbohydrate",
+      "unit": "g",
+      "category": "macro"
+    },
+    {
+      "id": "fat_g",
+      "name": "Total Fat",
+      "unit": "g",
+      "category": "macro"
+    },
+    {
+      "id": "fiber_g",
+      "name": "Dietary Fiber",
+      "unit": "g",
+      "category": "macro"
+    },
+    {
+      "id": "iron_mg",
+      "name": "Iron",
+      "unit": "mg",
+      "category": "mineral"
+    },
+    {
+      "id": "calcium_mg",
+      "name": "Calcium",
+      "unit": "mg",
+      "category": "mineral"
+    },
+    {
+      "id": "magnesium_mg",
+      "name": "Magnesium",
+      "unit": "mg",
+      "category": "mineral"
+    },
+    {
+      "id": "zinc_mg",
+      "name": "Zinc",
+      "unit": "mg",
+      "category": "mineral"
+    },
+    {
+      "id": "potassium_mg",
+      "name": "Potassium",
+      "unit": "mg",
+      "category": "mineral"
+    },
+    {
+      "id": "sodium_mg",
+      "name": "Sodium",
+      "unit": "mg",
+      "category": "mineral"
+    },
+    {
+      "id": "phosphorus_mg",
+      "name": "Phosphorus",
+      "unit": "mg",
+      "category": "mineral"
+    },
+    {
+      "id": "folate_ug",
+      "name": "Folate (B9)",
+      "unit": "ug",
+      "category": "vitamin"
+    },
+    {
+      "id": "vitamin_c_mg",
+      "name": "Vitamin C",
+      "unit": "mg",
+      "category": "vitamin"
+    },
+    {
+      "id": "vitamin_a_ug",
+      "name": "Vitamin A",
+      "unit": "ug",
+      "category": "vitamin"
+    },
+    {
+      "id": "vitamin_b6_mg",
+      "name": "Vitamin B6",
+      "unit": "mg",
+      "category": "vitamin"
+    },
+    {
+      "id": "thiamine_mg",
+      "name": "Thiamine (B1)",
+      "unit": "mg",
+      "category": "vitamin"
+    },
+    {
+      "id": "riboflavin_mg",
+      "name": "Riboflavin (B2)",
+      "unit": "mg",
+      "category": "vitamin"
+    },
+    {
+      "id": "niacin_mg",
+      "name": "Niacin (B3)",
+      "unit": "mg",
+      "category": "vitamin"
+    },
+    {
+      "id": "biotin_ug",
+      "name": "Biotin (B7)",
+      "unit": "ug",
+      "category": "vitamin"
+    },
+    {
+      "id": "vitamin_b12_ug",
+      "name": "Vitamin B12",
+      "unit": "ug",
+      "category": "vitamin"
+    }
+  ]
+}

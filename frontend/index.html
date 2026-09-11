@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimpleNutri — Nutrition Knowledge Base & Cycle Personalization</title>
+  <meta name="description" content="Evidence-based food nutrient knowledge base, cycle-personalized nutrition guidance, and smart kitchen-recipe inventory matcher.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="manifest" href="/static/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="nav-brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <span class="brand-title">SimpleNutri</span>
+          <span class="brand-badge">REST API v1.0</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-btn active" data-tab="tab-cycle" id="nav-cycle-btn">
+          <span>🌸</span> Cycle & Goals
+        </button>
+        <button class="nav-btn" data-tab="tab-foods" id="nav-foods-btn">
+          <span>🥗</span> Food Database
+        </button>
+        <button class="nav-btn" data-tab="tab-kitchen" id="nav-kitchen-btn">
+          <span>🍳</span> Kitchen & Recipes
+        </button>
+        <button class="nav-btn" data-tab="tab-shopping" id="nav-shopping-btn">
+          <span>🛒</span> Shopping List
+        </button>
+        <button class="nav-btn" data-tab="tab-api" id="nav-api-btn">
+          <span>⚡</span> API Explorer
+        </button>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="/docs" target="_blank" class="docs-link" id="api-docs-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Swagger Docs
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content Tabs -->
+    <main class="main-content">
+      
+      <!-- TAB 1: CYCLE & GOALS -->
+      <section id="tab-cycle" class="tab-pane active">
+        <div class="hero-card">
+          <div class="hero-text">
+            <span class="pill-badge">Evidence-Based Personalization</span>
+            <h1>Cycle Context & Daily Nutritional Focus</h1>
+            <p>Moving from <em>cycle context → daily nutritional focus → suitable foods → kitchen match → shopping list</em>. All cycle dates are calculated privately on your device.</p>
+          </div>
+          <div class="cycle-input-form">
+            <div class="form-group">
+              <label for="period-date">Last Period Start Date</label>
+              <input type="date" id="period-date" class="input-control">
+            </div>
+            <div class="form-group">
+              <label for="cycle-len">Cycle Length: <strong id="cycle-len-val">28</strong> days</label>
+              <input type="range" id="cycle-len" min="21" max="40" value="28" class="range-control">
+            </div>
+            <button id="calc-cycle-btn" class="btn btn-primary">
+              Calculate Nutritional Focus
+            </button>
+          </div>
+        </div>
+
+        <div id="phase-result-container" class="phase-result-card">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </section>
+
+      <!-- TAB 2: FOOD DATABASE -->
+      <section id="tab-foods" class="tab-pane">
+        <div class="section-header">
+          <div>
+            <h2>Canonical Food Knowledge Base</h2>
+            <p>Authoritative nutrient values per 100g basis from <strong>ICMR-NIN IFCT 2017</strong> & <strong>USDA FoodData Central</strong>.</p>
+          </div>
+          <div class="search-bar">
+            <input type="text" id="food-search-input" placeholder="Search by name, regional alias ('palak', 'ragi', 'nachni')...">
+            <button id="food-search-btn" class="btn btn-secondary">Search</button>
+          </div>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filters-container">
+          <div class="filter-group">
+            <span class="filter-label">Category:</span>
+            <select id="filter-category" class="select-control">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Cuisine:</span>
+            <select id="filter-cuisine" class="select-control">
+              <option value="">All Cuisines</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Diet:</span>
+            <select id="filter-diet" class="select-control">
+              <option value="">All Diets</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Nutrition Focus:</span>
+            <select id="filter-tag" class="select-control">
+              <option value="">All Priorities</option>
+              <option value="iron">High Iron</option>
+              <option value="calcium">High Calcium</option>
+              <option value="magnesium">High Magnesium</option>
+              <option value="protein">High Protein</option>
+              <option value="fiber">High Fiber</option>
+              <option value="omega_3">Omega-3 Rich</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Food Grid -->
+        <div id="foods-grid" class="cards-grid">
+          <!-- Food Cards populated dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB 3: KITCHEN & RECIPE MATCHER -->
+      <section id="tab-kitchen" class="tab-pane">
+        <div class="kitchen-layout">
+          <!-- Left: Pantry Management -->
+          <div class="pantry-panel">
+            <div class="panel-header">
+              <div>
+                <h3>My Kitchen Pantry</h3>
+                <p>Add ingredients you currently have at home.</p>
+              </div>
+              <span id="pantry-count-badge" class="badge">0 items</span>
+            </div>
+
+            <div class="pantry-search-add">
+              <input type="text" id="pantry-add-input" placeholder="Quick add ingredient (e.g. Ragi, Spinach, Moong)..." autocomplete="off">
+              <button id="pantry-add-btn" class="btn btn-sm btn-primary">Add</button>
+              <div id="pantry-autocomplete-dropdown" class="autocomplete-dropdown"></div>
+            </div>
+
+            <div class="quick-tags" id="quick-pantry-tags">
+              <!-- Clickable tags for common items -->
+            </div>
+
+            <div class="pantry-items-list" id="pantry-items-list">
+              <!-- Dynamically populated list with remove buttons -->
+            </div>
+          </div>
+
+          <!-- Right: Ranked Recipes -->
+          <div class="recipes-panel">
+            <div class="panel-header">
+              <div>
+                <h3>Ranked Recipe Recommendations</h3>
+                <p>Ranked by Kitchen Ingredient Match % + Phase Nutritional Synergy.</p>
+              </div>
+            </div>
+
+            <div id="ranked-recipes-list" class="ranked-recipes-container">
+              <!-- Ranked recipes populated dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: SHOPPING LIST -->
+      <section id="tab-shopping" class="tab-pane">
+        <div class="shopping-header">
+          <div>
+            <h2>Smart Shopping List</h2>
+            <p>Deduplicated missing ingredients calculated across all your selected recipes.</p>
+          </div>
+          <div class="shopping-actions">
+            <button id="copy-shopping-btn" class="btn btn-secondary">
+              📋 Copy to Clipboard
+            </button>
+            <button id="clear-shopping-btn" class="btn btn-outline">
+              Clear All
+            </button>
+          </div>
+        </div>
+
+        <div id="shopping-list-container" class="shopping-container">
+          <!-- Shopping items populated dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB 5: API EXPLORER -->
+      <section id="tab-api" class="tab-pane">
+        <div class="api-explorer-header">
+          <h2>Render REST API Endpoints</h2>
+          <p>This FastAPI service is ready for deployment on Render. Test endpoints directly or copy curl commands.</p>
+        </div>
+
+        <div class="api-endpoints-grid">
+          <div class="endpoint-card">
+            <div class="endpoint-tag get">GET</div>
+            <div class="endpoint-url">/api/v1/foods?category=millets&tag=iron</div>
+            <p class="endpoint-desc">Filter canonical foods with nutrient composition per 100g.</p>
+            <button class="btn btn-sm btn-outline test-api-btn" data-endpoint="/api/v1/foods?category=millets&tag=iron">Test Query</button>
+          </div>
+
+          <div class="endpoint-card">
+            <div class="endpoint-tag get">GET</div>
+            <div class="endpoint-url">/api/v1/foods/search?q=spinach</div>
+            <p class="endpoint-desc">Search foods by common name or regional aliases ('palak', 'cheera').</p>
+            <button class="btn btn-sm btn-outline test-api-btn" data-endpoint="/api/v1/foods/search?q=spinach">Test Query</button>
+          </div>
+
+          <div class="endpoint-card">
+            <div class="endpoint-tag get">GET</div>
+            <div class="endpoint-url">/api/v1/recipes?cuisine=south_indian</div>
+            <p class="endpoint-desc">List recipes with strict canonical ingredient food IDs and quantities.</p>
+            <button class="btn btn-sm btn-outline test-api-btn" data-endpoint="/api/v1/recipes?cuisine=south_indian">Test Query</button>
+          </div>
+
+          <div class="endpoint-card">
+            <div class="endpoint-tag get">GET</div>
+            <div class="endpoint-url">/api/v1/cycle/phases</div>
+            <p class="endpoint-desc">Retrieve evidence-based nutritional priorities for all cycle phases.</p>
+            <button class="btn btn-sm btn-outline test-api-btn" data-endpoint="/api/v1/cycle/phases">Test Query</button>
+          </div>
+
+          <div class="endpoint-card">
+            <div class="endpoint-tag get">GET</div>
+            <div class="endpoint-url">/health</div>
+            <p class="endpoint-desc">Service health and database connection status for Render.</p>
+            <button class="btn btn-sm btn-outline test-api-btn" data-endpoint="/health">Test Query</button>
+          </div>
+        </div>
+
+        <div class="api-response-viewer">
+          <div class="viewer-header">
+            <span>API Response Output</span>
+            <span id="response-status-badge" class="badge">Awaiting Request</span>
+          </div>
+          <pre id="api-output-box">Click "Test Query" on any endpoint above to execute it live against the API...</pre>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Food Detail Modal -->
+    <div id="food-modal" class="modal-backdrop">
+      <div class="modal-card">
+        <button id="close-modal-btn" class="modal-close">&times;</button>
+        <div id="modal-content">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "source-ifct-2017",
+    "name": "ICMR-NIN Indian Food Composition Tables",
+    "version": "2017",
+    "organization": "National Institute of Nutrition (ICMR)",
+    "country": "IN",
+    "url": "https://www.nin.res.in/ebooks/IFCT2017_16122024.pdf",
+    "basis": "per 100 g edible portion",
+    "license_status": "ICMR-NIN Academic Reference / Fair Use Knowledge Base",
+    "notes": "Standard reference for Indian food macronutrients and micronutrients"
+  },
+  {
+    "id": "source-dgi-2024",
+    "name": "ICMR-NIN Dietary Guidelines for Indians",
+    "version": "2024",
+    "organization": "National Institute of Nutrition (ICMR)",
+    "country": "IN",
+    "url": "https://www.nin.res.in/dietaryguidelines/pdfjs/locale/DGI07052024P.pdf",
+    "basis": "Dietary guidelines and nutrient priorities across life stages",
+    "license_status": "Public Nutrition Policy Reference",
+    "notes": "Guidance on food groups, dietary diversity, and micronutrient adequacy"
+  },
+  {
+    "id": "source-usda-fdc",
+    "name": "USDA FoodData Central",
+    "version": "2024",
+    "organization": "U.S. Department of Agriculture, Agricultural Research Service",
+    "country": "US",
+    "url": "https://fdc.nal.usda.gov",
+    "basis": "per 100 g edible portion",
+    "license_status": "Public Domain (U.S. Government Work)",
+    "notes": "Foundation Foods and Standard Reference legacy data for global commodities"
+  },
+  {
+    "id": "source-canonical-recipes",
+    "name": "NutriCycle Curated Recipe Collection",
+    "version": "1.0",
+    "organization": "SimpleNutri Project",
+    "country": "GLOBAL",
+    "url": "https://github.com/simplenutri/recipes",
+    "basis": "Culinary standardized home preparations",
+    "license_status": "Open / CC-BY-4.0",
+    "notes": "Standard recipes strictly mapped to canonical food IDs"
+  }
+]

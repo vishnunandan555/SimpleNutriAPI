@@ -1,0 +1,216 @@
+[
+  {
+    "id": "ragi_dosa",
+    "name": "Crispy Ragi Dosa",
+    "description": "Nutrient-dense fermented crepes made with finger millet and black gram, naturally packed with calcium and iron.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "south_indian",
+    "diet": ["vegetarian", "vegan", "gluten_free"],
+    "prep_time_min": 20,
+    "cook_time_min": 15,
+    "servings": 4,
+    "ingredients": [
+      { "food_id": "a010_ragi", "quantity": 150, "unit": "g" },
+      { "food_id": "b003_black_gram_dal", "quantity": 50, "unit": "g" },
+      { "food_id": "a015_rice_raw_milled", "quantity": 50, "unit": "g" },
+      { "food_id": "t001_coconut_oil", "quantity": 10, "unit": "g" }
+    ],
+    "tags": ["calcium", "iron", "fiber", "luteal_phase", "menstrual_phase", "gluten_free"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "palak_moong_dal",
+    "name": "Palak Moong Dal (Spinach Lentil Stew)",
+    "description": "Nourishing yellow lentils simmered with fresh spinach, fragrant garlic, ginger, and turmeric.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "north_indian",
+    "diet": ["vegetarian", "gluten_free"],
+    "prep_time_min": 10,
+    "cook_time_min": 25,
+    "servings": 3,
+    "ingredients": [
+      { "food_id": "b010_green_gram_dal", "quantity": 120, "unit": "g" },
+      { "food_id": "c033_spinach", "quantity": 150, "unit": "g" },
+      { "food_id": "d075_tomato_ripe_hybrid", "quantity": 80, "unit": "g" },
+      { "food_id": "g017_onion_big", "quantity": 60, "unit": "g" },
+      { "food_id": "g011_garlic_big_cloves", "quantity": 10, "unit": "g" },
+      { "food_id": "g014_ginger_fresh", "quantity": 10, "unit": "g" },
+      { "food_id": "g033_turmeric_powder", "quantity": 5, "unit": "g" },
+      { "food_id": "t013_ghee", "quantity": 10, "unit": "g" }
+    ],
+    "tags": ["iron", "folate", "protein", "menstrual_phase", "follicular_phase"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "cheera_thoran",
+    "name": "Kerala Cheera Thoran (Amaranth Coconut Stir-fry)",
+    "description": "Traditional Kerala red amaranth greens sautéed with freshly grated coconut, shallots, and virgin coconut oil.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "kerala",
+    "diet": ["vegetarian", "vegan", "gluten_free"],
+    "prep_time_min": 10,
+    "cook_time_min": 12,
+    "servings": 3,
+    "ingredients": [
+      { "food_id": "c003_amaranth_leaves_red", "quantity": 200, "unit": "g" },
+      { "food_id": "h007_coconut_kernel_fresh", "quantity": 40, "unit": "g" },
+      { "food_id": "g017_onion_big", "quantity": 40, "unit": "g" },
+      { "food_id": "g011_garlic_big_cloves", "quantity": 5, "unit": "g" },
+      { "food_id": "g033_turmeric_powder", "quantity": 3, "unit": "g" },
+      { "food_id": "t001_coconut_oil", "quantity": 10, "unit": "g" }
+    ],
+    "tags": ["iron", "calcium", "potassium", "menstrual_phase", "kerala_cuisine"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "methi_paratha",
+    "name": "Fresh Methi Paratha",
+    "description": "Whole wheat flatbreads kneaded with fresh fenugreek leaves and mild spices, cooked golden with desi ghee.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "punjabi",
+    "diet": ["vegetarian"],
+    "prep_time_min": 15,
+    "cook_time_min": 15,
+    "servings": 4,
+    "ingredients": [
+      { "food_id": "a019_wheat_flour_atta", "quantity": 180, "unit": "g" },
+      { "food_id": "c020_fenugreek_leaves", "quantity": 100, "unit": "g" },
+      { "food_id": "g033_turmeric_powder", "quantity": 3, "unit": "g" },
+      { "food_id": "t013_ghee", "quantity": 15, "unit": "g" }
+    ],
+    "tags": ["calcium", "fiber", "complex_carbs", "luteal_phase"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "chickpea_spinach_curry",
+    "name": "Chole Palak (Chickpea & Spinach Curry)",
+    "description": "Hearty chickpeas and fresh spinach simmered in a spiced onion-tomato reduction with garlic and ginger.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "north_indian",
+    "diet": ["vegetarian", "vegan", "gluten_free"],
+    "prep_time_min": 15,
+    "cook_time_min": 30,
+    "servings": 4,
+    "ingredients": [
+      { "food_id": "b002_bengal_gram_whole", "quantity": 180, "unit": "g" },
+      { "food_id": "c033_spinach", "quantity": 150, "unit": "g" },
+      { "food_id": "g017_onion_big", "quantity": 80, "unit": "g" },
+      { "food_id": "d075_tomato_ripe_hybrid", "quantity": 100, "unit": "g" },
+      { "food_id": "g014_ginger_fresh", "quantity": 10, "unit": "g" },
+      { "food_id": "g011_garlic_big_cloves", "quantity": 10, "unit": "g" },
+      { "food_id": "g033_turmeric_powder", "quantity": 5, "unit": "g" },
+      { "food_id": "t001_coconut_oil", "quantity": 15, "unit": "g" }
+    ],
+    "tags": ["iron", "folate", "protein", "zinc", "menstrual_phase", "follicular_phase"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "overnight_chia_oats",
+    "name": "Overnight Chia & Berry Oats",
+    "description": "Rolled oats and chia seeds soaked in protein-rich yogurt, topped with soaked almonds.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "continental",
+    "diet": ["vegetarian", "gluten_free"],
+    "prep_time_min": 10,
+    "cook_time_min": 0,
+    "servings": 2,
+    "ingredients": [
+      { "food_id": "global_rolled_oats", "quantity": 80, "unit": "g" },
+      { "food_id": "global_chia_seeds", "quantity": 20, "unit": "g" },
+      { "food_id": "l005_curd_dahi", "quantity": 150, "unit": "g" },
+      { "food_id": "h001_almond", "quantity": 25, "unit": "g" }
+    ],
+    "tags": ["omega_3", "fiber", "calcium", "magnesium", "follicular_phase"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "mediterranean_quinoa_bowl",
+    "name": "Mediterranean Quinoa & Pumpkin Seed Bowl",
+    "description": "Nutty quinoa tossed with baby spinach, sweet cherry tomatoes, red onions, and crunchy pepitas.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "mediterranean",
+    "diet": ["vegetarian", "vegan", "gluten_free"],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 2,
+    "ingredients": [
+      { "food_id": "global_quinoa", "quantity": 100, "unit": "g" },
+      { "food_id": "c033_spinach", "quantity": 60, "unit": "g" },
+      { "food_id": "d075_tomato_ripe_hybrid", "quantity": 80, "unit": "g" },
+      { "food_id": "g017_onion_big", "quantity": 40, "unit": "g" },
+      { "food_id": "global_pumpkin_seeds", "quantity": 25, "unit": "g" }
+    ],
+    "tags": ["complete_protein", "magnesium", "zinc", "ovulatory_phase"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "pan_seared_salmon_spinach",
+    "name": "Pan-Seared Wild Salmon on Sautéed Greens",
+    "description": "Tender wild salmon seared golden in garlic-infused oil over tender wilted spinach and ginger.",
+    "region": "global",
+    "country": "GLOBAL",
+    "cuisine": "mediterranean",
+    "diet": ["non_vegetarian", "gluten_free"],
+    "prep_time_min": 10,
+    "cook_time_min": 12,
+    "servings": 2,
+    "ingredients": [
+      { "food_id": "global_wild_salmon", "quantity": 200, "unit": "g" },
+      { "food_id": "c033_spinach", "quantity": 120, "unit": "g" },
+      { "food_id": "g011_garlic_big_cloves", "quantity": 8, "unit": "g" },
+      { "food_id": "g014_ginger_fresh", "quantity": 6, "unit": "g" }
+    ],
+    "tags": ["omega_3", "anti_inflammatory", "vitamin_b12", "menstrual_phase", "cramp_relief"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "sweet_potato_beetroot_hash",
+    "name": "Spiced Sweet Potato & Beetroot Hash",
+    "description": "Steamed cubes of sweet potato and beetroot pan-tossed with ginger, turmeric, and a squeeze of fresh amla juice.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "south_indian",
+    "diet": ["vegetarian", "vegan", "gluten_free"],
+    "prep_time_min": 10,
+    "cook_time_min": 15,
+    "servings": 2,
+    "ingredients": [
+      { "food_id": "f013_sweet_potato_brown_skin", "quantity": 150, "unit": "g" },
+      { "food_id": "f001_beetroot", "quantity": 100, "unit": "g" },
+      { "food_id": "e021_goosberry", "quantity": 30, "unit": "g" },
+      { "food_id": "g014_ginger_fresh", "quantity": 8, "unit": "g" },
+      { "food_id": "t001_coconut_oil", "quantity": 10, "unit": "g" }
+    ],
+    "tags": ["complex_carbs", "nitrates", "vitamin_c", "luteal_phase", "serotonin_boost"],
+    "source_ids": ["source-canonical-recipes"]
+  },
+  {
+    "id": "paneer_pumpkin_seed_bhurji",
+    "name": "Paneer & Crushed Pumpkin Seed Bhurji",
+    "description": "Crumbled artisanal cottage cheese scrambled with roasted pumpkin seeds, diced onions, tomatoes, and haldi.",
+    "region": "india",
+    "country": "IN",
+    "cuisine": "punjabi",
+    "diet": ["vegetarian", "gluten_free"],
+    "prep_time_min": 10,
+    "cook_time_min": 12,
+    "servings": 2,
+    "ingredients": [
+      { "food_id": "l003_paneer", "quantity": 150, "unit": "g" },
+      { "food_id": "global_pumpkin_seeds", "quantity": 25, "unit": "g" },
+      { "food_id": "g017_onion_big", "quantity": 60, "unit": "g" },
+      { "food_id": "d075_tomato_ripe_hybrid", "quantity": 60, "unit": "g" },
+      { "food_id": "g033_turmeric_powder", "quantity": 3, "unit": "g" },
+      { "food_id": "t013_ghee", "quantity": 10, "unit": "g" }
+    ],
+    "tags": ["magnesium", "calcium", "protein", "zinc", "luteal_phase", "pms_support"],
+    "source_ids": ["source-canonical-recipes"]
+  }
+]
