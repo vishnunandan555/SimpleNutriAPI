@@ -422,53 +422,84 @@ curl -s "http://localhost:8000/api/v1/nutrients/calcium_mg/top-foods?limit=3" | 
 
 ---
 
-## ☁️ Deploying to Render
+## ☁️ Deploying to Render (Step-by-Step Guide)
 
-### Option A: Automated Blueprint Deployment (Recommended)
-1. Push this repository to GitHub or GitLab.
-2. In the [Render Dashboard](https://render.com), click **New +** → **Blueprint**.
-3. Select your repository. Render reads [`render.yaml`](render.yaml) automatically:
-   - **Service Name**: `simplenutri-api`
-   - **Build Command**: `pip install -r backend/requirements.txt && python backend/scripts/seed_db.py`
-   - **Start Command**: `uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT`
-   - **Health Check**: `/health`
-4. Click **Apply**.
+SimpleNutri API is optimized specifically for Render. It runs as a continuous, high-performance web service with zero cold starts, persistent memory cache, and automatic deployments.
 
-### Option B: Using Render Docker Service
-1. In the Render Dashboard, click **New +** → **Web Service**.
-2. Select your repository and choose **Docker** as the environment.
-3. Render automatically builds using the multi-stage [`Dockerfile`](Dockerfile).
+### Method 1: Automated Blueprint Deployment (Recommended — 1-Click)
 
-### Option C: Adding Production PostgreSQL
-SimpleNutri supports both embedded SQLite and Render Managed PostgreSQL:
-1. In Render, create a **PostgreSQL** instance.
-2. In the Web Service Environment variables, add:
-   - `DATABASE_URL`: `[Your PostgreSQL Connection String]`
-3. SimpleNutri automatically connects to Postgres, creates all tables, and seeds the canonical dataset on first boot.
+1. **Sign Up / Log In**:
+   - Go to [dashboard.render.com](https://dashboard.render.com) and log in with your GitHub account.
+2. **Create New Blueprint**:
+   - Click the **"New +"** button in the top navigation bar.
+   - Select **"Blueprint"**.
+3. **Connect Your Repository**:
+   - Under **Connect a repository**, choose `vishnunandan555/SimpleNutriAPI`.
+4. **Deploy**:
+   - Render automatically parses [`render.yaml`](render.yaml) from your repository.
+   - It will show the pre-configured service:
+     - **Name**: `simplenutri-api`
+     - **Runtime**: `Python 3.12`
+     - **Plan**: `Free`
+     - **Build Command**: `pip install -r backend/requirements.txt && python backend/scripts/seed_db.py`
+     - **Start Command**: `uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT`
+     - **Health Check Path**: `/health`
+   - Click **"Apply"**.
+5. **Done!**:
+   - Render will build the project, run database verification, and issue a free SSL certificate.
+   - Your live service will be accessible at: `https://simplenutri-api.onrender.com`.
 
 ---
 
-## ⚡ Deploying to Vercel (Serverless)
+### Method 2: Manual Web Service Setup
 
-SimpleNutri API includes zero-config Vercel support out of the box via [`vercel.json`](vercel.json) and [`api/index.py`](api/index.py).
+If you prefer to configure manually instead of using Blueprints:
 
-### Quick Vercel Setup:
-1. **Push to GitHub**:
-   Ensure your code is pushed to your GitHub repository.
-2. **Import to Vercel**:
-   - Go to [Vercel Dashboard](https://vercel.com/new).
-   - Select your `SimpleNutriAPI` repository and click **Import**.
-   - Vercel automatically detects the Python runtime and reads `vercel.json`.
-   - Leave the Framework Preset as **Other**.
-   - Click **Deploy**.
-3. **Environment & Serverless Database**:
-   - On serverless cold start, SimpleNutri automatically copies the embedded SQLite database (`nutrition.db`, 2.7MB) to `/tmp/nutrition.db` for ephemeral read/write and WAL performance.
-   - For persistent cloud state or PostgreSQL (e.g. Supabase, Neon, or Vercel Postgres), simply add the environment variable in your Vercel Project Settings:
-     - `DATABASE_URL`: `postgresql://user:password@host:port/dbname`
-4. **Access your API**:
-   - Your live API will be available at `https://your-project.vercel.app/`
-   - Interactive docs: `https://your-project.vercel.app/docs`
-   - Health check: `https://your-project.vercel.app/health`
+1. In the Render Dashboard, click **New +** → **Web Service**.
+2. Select your `vishnunandan555/SimpleNutriAPI` repository.
+3. Configure the settings:
+   - **Name**: `simplenutri-api`
+   - **Region**: Choose the closest region (e.g. `Oregon (US West)` or `Frankfurt (EU)`).
+   - **Branch**: `main`
+   - **Runtime**: `Python 3`
+   - **Build Command**:
+     ```bash
+     pip install -r backend/requirements.txt && python backend/scripts/seed_db.py
+     ```
+   - **Start Command**:
+     ```bash
+     uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+     ```
+   - **Instance Type**: `Free`
+4. Expand **Advanced Settings**:
+   - **Health Check Path**: `/health`
+   - **Auto-Deploy**: `Yes` (automatically redeploys every time you push to `main`).
+5. Click **Create Web Service**.
+
+---
+
+### Method 3: Native Docker Container Deployment
+
+You can also deploy via the included multi-stage [`Dockerfile`](Dockerfile):
+
+1. Click **New +** → **Web Service**.
+2. Select `vishnunandan555/SimpleNutriAPI`.
+3. Set **Runtime** to `Docker`.
+4. Render will automatically detect and build the `Dockerfile`, seed the database, and bind to `$PORT`.
+
+---
+
+### 🗄️ Optional: Connecting Render Managed PostgreSQL
+
+SimpleNutri works out of the box with the embedded SQLite database (`nutrition.db`). If you want to scale to a dedicated PostgreSQL database on Render:
+
+1. In the Render Dashboard, click **New +** → **PostgreSQL**.
+2. Set a name (e.g., `simplenutri-db`) and click **Create Database**.
+3. Copy the **Internal Database URL** (e.g., `postgres://user:pass@dpg-xxx:5432/simplenutri_db`).
+4. In your `simplenutri-api` Web Service, go to **Environment** → **Add Environment Variable**:
+   - Key: `DATABASE_URL`
+   - Value: `[Your Copied PostgreSQL Connection String]`
+5. Click **Save Changes**. SimpleNutri will automatically connect to PostgreSQL, create all relational schemas, and seed all 548 canonical foods and 11,265 nutrient entries on first boot!
 
 ---
 
