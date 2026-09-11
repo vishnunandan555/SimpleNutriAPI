@@ -95,7 +95,7 @@ Also includes an **offline mobile bundle (`mobile_bundle/`)** with a pre-compile
 ### 1. Setup Environment
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/SimpleNutriAPI.git
+git clone https://github.com/vishnunandan555/SimpleNutriAPI.git
 cd SimpleNutriAPI
 
 # Create and activate Python 3.10+ virtual environment
@@ -452,6 +452,8 @@ curl -s "http://localhost:8000/api/v1/nutrients/calcium_mg/top-foods?limit=3" | 
 SimpleNutri API is optimized specifically for Render. It runs as a continuous, high-performance web service with zero cold starts, persistent memory cache, and automatic deployments.
 
 ### Method 1: Automated Blueprint Deployment (Recommended — 1-Click)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/vishnunandan555/SimpleNutriAPI)
 
 1. **Sign Up / Log In**:
    - Go to [dashboard.render.com](https://dashboard.render.com) and log in with your GitHub account.

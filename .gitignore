@@ -25,3 +25,8 @@ htmlcov/
 .idea/
 .DS_Store
 *.swp
+
+# Planning & Roadmap docs
+FUTURE_AI_FEATURES.md
+*ai_features*.md
+
