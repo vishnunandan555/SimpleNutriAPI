@@ -1,0 +1,23 @@
+name: Keep Render Service Warm (Cron)
+
+on:
+  schedule:
+    # Runs every 10 minutes to prevent Render free tier instance from spinning down
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    name: Ping Render Health Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping https://simplenutri-api.onrender.com/health
+        run: |
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://simplenutri-api.onrender.com/health)
+          echo "Render health check response: HTTP $HTTP_STATUS"
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            echo "✅ Render instance is active and warm!"
+          else
+            echo "⚠️ Health check returned HTTP $HTTP_STATUS"
+            exit 1
+          fi
